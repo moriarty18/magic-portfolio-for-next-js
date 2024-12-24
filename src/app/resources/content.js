@@ -8,7 +8,7 @@ const person = {
     },
     role:      'Digital marketing manager',
     avatar:    '/images/avatar.jpg',
-    location:  'Europe/Almaty',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    location:  'Asia/Almaty',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ['English', 'Russian']  // optional: Leave the array empty if you don't want to display languages
 }
 
