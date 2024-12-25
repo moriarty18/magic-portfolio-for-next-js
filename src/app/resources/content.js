@@ -6,7 +6,7 @@ const person = {
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Digital marketing manager',
+    role:      'Диджитал маркетолог',
     avatar:    '/images/avatar.jpg',
     location:  'Asia/Almaty',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: []  // optional: Leave the array empty if you don't want to display languages
@@ -39,7 +39,7 @@ const social = [
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:example@gmail.com',
+        link: 'mailto:kozhanov93@gmail.com',
     },
 ]
 
@@ -48,12 +48,12 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Диджитал маркетолог</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    subline: <>Привет! Я Азиз 👋 Digital-маркетолог, который превращает рекламные бюджеты в  <InlineCode>прибыль</InlineCode>, последние 7 лет помогаю бизнесу масштабироваться через системный digital-маркетинг<br/> Специализируюсь на создании прибыльных воронок продаж и автоматизации маркетинга.</>
 }
 
 const about = {
     label: 'About',
-    title: 'About me',
+    title: 'Обо мне',
     description: `Meet ${person.name}, ${person.role} from ${person.location}`,
     tableOfContent: {
         display: true,
