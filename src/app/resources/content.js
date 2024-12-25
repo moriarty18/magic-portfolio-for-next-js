@@ -9,7 +9,7 @@ const person = {
     role:      'Digital marketing manager',
     avatar:    '/images/avatar.jpg',
     location:  'Asia/Almaty',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Russian']  // optional: Leave the array empty if you don't want to display languages
+    languages: []  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
@@ -22,19 +22,19 @@ const social = [
     // Links are automatically displayed.
     // Import new icons in /once-ui/icons.ts
     {
-        name: 'GitHub',
-        icon: 'github',
-        link: 'https://github.com/once-ui-system/nextjs-starter',
+        name: 'Instagram',
+        icon: 'instagram',
+        link: 'https://www.instagram.com/hustle.almaty',
     },
     {
         name: 'LinkedIn',
         icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
+        link: 'https://www.linkedin.com/in/aziz-kozhanov/',
     },
     {
-        name: 'X',
-        icon: 'x',
-        link: '',
+        name: 'WhatsApp',
+        icon: 'whatsapp',
+        link: 'https://wa.me/7075557293',
     },
     {
         name: 'Email',
