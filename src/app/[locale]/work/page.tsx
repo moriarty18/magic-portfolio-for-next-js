@@ -66,7 +66,11 @@ export default function Pricing({ params: { locale } }: { params: { locale: stri
           style={{ textAlign: 'center' }}>
           Тарифные планы
         </Heading>
-        <div style={{ maxWidth: '42rem', width: '100%', textAlign: 'center' }}>
+        <div style={{ 
+          maxWidth: 'var(--responsive-width-s)', 
+          width: '100%', 
+          textAlign: 'center' 
+        }}>
           <Text
             variant="body-default-l"
             onBackground="neutral-weak">
