@@ -158,15 +158,15 @@ export default function About(
                                 alignItems="center">
                                 <Flex paddingLeft="12">
                                     <Icon
-                                        name="calendar"
+                                        name="whatsapp"
                                         onBackground="brand-weak"/>
                                 </Flex>
                                 <Flex
                                     paddingX="8">
-                                    Schedule a call
+                                    Написать в Whatsapp
                                 </Flex>
                                 <IconButton
-                                    href={about.calendar.link}
+                                    href="https://wa.me/7075557293"
                                     data-border="rounded"
                                     variant="tertiary"
                                     icon="chevronRight"/>
