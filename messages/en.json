@@ -8,11 +8,11 @@
         "button": "Sign up"
     },
     "home": {
-        "label": "Home",
-        "title": "{name}'s Portfolio",
-        "description": "Portfolio website showcasing my work as a {role}",
-        "headline": "Design engineer and builder",
-        "subline": "I'm Selene, a design engineer at FLY, where I craft intuitive user experiences. After hours, I build my own projects."
+        "label": "Главная",
+        "title": "Портфолио {name}",
+        "description": "Портфолио digital-маркетолога {role}",
+        "headline": "Digital-маркетолог",
+        "subline": "Превращаю рекламные бюджеты в прибыль, последние 7 лет помогаю бизнесу масштабироваться через системный digital-маркетинг."
     },
     "about": {
         "label": "About",
@@ -66,9 +66,9 @@
         "description": "Read what {name} has been up to recently"
     },
     "work": {
-        "label": "Work",
-        "title": "My projects",
-        "description": "Design and dev projects by {name}"
+        "label": "Проекты",
+        "title": "Мои проекты",
+        "description": "Digital-маркетинг проекты {name}"
     },
     "gallery": {
         "label": "Gallery",
@@ -76,6 +76,6 @@
         "description": "A photo collection by {name}"
     },
     "projectCard": {
-        "label": "Read Case Study"
+        "label": "Посмотреть кейс"
     }
 }
