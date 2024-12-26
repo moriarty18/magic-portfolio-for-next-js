@@ -44,7 +44,7 @@ const social = [
 ]
 
 const home = {
-    label: 'Home',
+    label: 'Главная',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Диджитал маркетолог</>,
@@ -52,7 +52,7 @@ const home = {
 }
 
 const about = {
-    label: 'About',
+    label: 'Резюме',
     title: 'Обо мне',
     description: `Meet ${person.name}, ${person.role} from ${person.location}`,
     tableOfContent: {
