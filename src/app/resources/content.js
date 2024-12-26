@@ -163,13 +163,13 @@ const about = {
                 title: 'Tilda',
                 description: <>Создание привлекательных, высококонверсионных landing page</>,
                 // optional: leave the array empty if you don't want to display images
-                images: 
+                images:[] 
             },
             {
                 title: 'Canva',
                 description: <>Инструмент для создания профессиональных визуальных креативов - от статичных изображений и инфографики до анимированных видео и презентаций, обеспечивающий максимальную вовлеченность аудитории через яркий и эффективный визуальный контент.</>,
                 // optional: leave the array empty if you don't want to display images
-                images: 
+                images:[] 
             }
             
         
