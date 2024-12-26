@@ -28,37 +28,44 @@ export const PricingCard: React.FC<PricingCardProps> = ({
   return (
     <Flex
       direction="column"
-      className={`w-full max-w-sm p-8 ${isPopular ? 'border-2 border-brand' : 'border border-neutral-alpha-medium'}`}
+      border={isPopular ? "brand-strong" : "neutral-medium"}
+      borderStyle={isPopular ? "solid-2" : "solid-1"}
       radius="l"
-      gap="m">
+      padding="xl"
+      gap="m"
+      style={{ width: '380px' }}>
       {isPopular && (
         <Text
-          className="text-center text-brand mb-4"
-          variant="body-strong-s">
+          variant="body-strong-s"
+          onBackground="brand-weak"
+          style={{ textAlign: 'center', marginBottom: 'var(--space-m)' }}>
           Популярный выбор
         </Text>
       )}
       
       <Heading
         variant="heading-strong-l"
-        className="text-center">
+        style={{ textAlign: 'center' }}>
         {title}
       </Heading>
       
       <Text
         variant="display-strong-l"
-        className="text-center">
+        style={{ textAlign: 'center' }}>
         {price}
       </Text>
       
       <Text
         variant="body-default-s"
         onBackground="neutral-weak"
-        className="text-center mb-6">
+        style={{ textAlign: 'center', marginBottom: 'var(--space-l)' }}>
         {description}
       </Text>
       
-      <Flex direction="column" gap="s" className="mb-8">
+      <Flex 
+        direction="column" 
+        gap="s" 
+        style={{ marginBottom: 'var(--space-l)' }}>
         {features.map((feature, index) => (
           <Flex key={index} gap="s" alignItems="center">
             <Icon

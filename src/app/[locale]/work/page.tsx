@@ -63,20 +63,17 @@ export default function Pricing({ params: { locale } }: { params: { locale: stri
         gap="m">
         <Heading 
           variant="display-strong-xl"
-          className="text-center">
+          style={{ textAlign: 'center' }}>
           Тарифные планы
         </Heading>
-        <Flex 
-          direction="column"
-          style={{ maxWidth: '42rem' }}>
+        <div style={{ maxWidth: '42rem', width: '100%', textAlign: 'center' }}>
           <Text
             variant="body-default-l"
-            onBackground="neutral-weak"
-            className="text-center">
+            onBackground="neutral-weak">
             Выберите подходящий тариф для вашего бизнеса. 
             Все тарифы включают базовую настройку и поддержку.
           </Text>
-        </Flex>
+        </div>
       </Flex>
 
       <Flex
