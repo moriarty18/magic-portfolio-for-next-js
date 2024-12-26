@@ -61,14 +61,15 @@ export default function Pricing({ params: { locale } }: { params: { locale: stri
         direction="column"
         alignItems="center"
         gap="m"
-        textAlign="center">
+        className="text-center">
         <Heading variant="display-strong-xl">
           Тарифные планы
         </Heading>
         <Text
           variant="body-default-l"
           onBackground="neutral-weak"
-          maxWidth="2xl">
+          maxWidth="2xl"
+          style={{ textAlign: 'center' }}>
           Выберите подходящий тариф для вашего бизнеса. 
           Все тарифы включают базовую настройку и поддержку.
         </Text>
