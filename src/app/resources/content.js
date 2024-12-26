@@ -1,8 +1,8 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-    firstName: 'Aziz',
-    lastName:  'Kozhanov',
+    firstName: 'Азиз',
+    lastName:  'Кожанов',
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
@@ -48,7 +48,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Диджитал маркетолог</>,
-    subline: <>Привет! Я Азиз 👋 Digital-маркетолог, который превращает рекламные бюджеты в  <InlineCode>прибыль</InlineCode>, последние 7 лет помогаю бизнесу масштабироваться через системный digital-маркетинг<br/> Специализируюсь на создании прибыльных воронок продаж и автоматизации маркетинга.</>
+    subline: <>Привет! Я Азиз 👋 Digital-маркетолог, превращаю рекламные бюджеты в  <InlineCode>прибыль</InlineCode>, последние 7 лет помогаю бизнесу масштабироваться через системный digital-маркетинг, <br/> специализируюсь на создании воронок продаж и автоматизации маркетинга.</>
 }
 
 const about = {
@@ -69,24 +69,24 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>Сертифицированный специалист Google Ads, Meta Blueprint и Яндекс.Директ. Постоянно изучаю новые инструменты и подходы в digital-маркетинге для достижения максимальной эффективности рекламных кампаний.</>
     },
     work: {
         display: true, // set to false to hide this section
-        title: 'Work Experience',
+        title: 'Опыт работы',
         experiences: [
             {
-                company: 'FLY',
-                timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                company: 'Abris Distribution',
+                timeframe: '2024 - н.в.',
+                role: 'Digital marketing manager',
                 achievements: [
-                    <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
-                    <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
+                    <>Успешный запуск digital-проекта по продвижению зарядных станций для электромобилей в ОАЭ с нуля: разработка landing page, настройка сквозной аналитики и автоматизации маркетинга, запуск рекламных кампании.</>,
+                    <>Достижения: стабильная генерация лидов со стоимостью $10 за обращение через рекламные кампании в Meta и Google Ads при выходе на новый рынок.</>
                 ],
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
-                        src: '/images/projects/project-01/cover-01.jpg',
-                        alt: 'Once UI Project',
+                        src: '/images/projects/project-01/cover-01.png',
+                        alt: 'Greenline project',
                         width: 16,
                         height: 9
                     }
