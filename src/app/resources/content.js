@@ -68,7 +68,7 @@ const about = {
     },
     intro: {
         display: true,
-        title: 'Introduction',
+        title: 'Описание',
         description: <>Сертифицированный специалист Google Ads, Meta Blueprint и Яндекс.Директ. Постоянно изучаю новые инструменты и подходы в digital-маркетинге для достижения максимальной эффективности рекламных кампаний.</>
     },
     work: {
@@ -93,48 +93,66 @@ const about = {
                 ]
             },
             {
-                company: 'Creativ3',
-                timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                company: 'Cheil Kazakhstan',
+                timeframe: '2022 - 2024',
+                role: 'CRM manager/PPC specialist ',
                 achievements: [
-                    <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
-                    <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
+                    <>Разработка и внедрение customer journey для пользователей Samsung с системой триггерных email-рассылок, push-уведомлений и таргетированных кампаний на основе owned каналов.</>,
+                    <>Достижения: годовой доход через owned каналы и прямой маркетинг составил $5.9M, успешная интеграция и работа с данными в экосистеме Adobe Experience Cloud (Analytics, Audience Manager, Campaign Classic).</>
+
+                    <>Управление рекламными кампаниями для ведущего автомобильного холдинга Astana Motors, включая премиальные и массовые бренды (Hyundai, BMW, Toyota, Lexus, Land Rover, Jaguar, Volvo и другие) в Google Ads, Meta Ads и Яндекс Директ.</>,
+                    <>Достижения: оптимизация рекламных кампаний с общим бюджетом более 40 млн тенге в месяц, настройка сквозной аналитики для 12+ брендов, что привело к снижению стоимости заявки на тест-драйв на 35% при сохранении качества лидов.</>
                 ],
-                images: [ ]
+                images: [ // optional: leave the array empty if you don't want to display images
+                    {
+                        src: '/images/projects/project-01/cover-02.jpg',
+                        alt: 'Greenline project',
+                        width: 21,
+                        height: 9
+                    }
+                ] 
             }
         ]
     },
     studies: {
         display: true, // set to false to hide this section
-        title: 'Studies',
+        title: 'Образование',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
+                name: 'Алматинский технологический университет',
+                description: <>Вычислительная техника и программное обеспечение</>,
             },
             {
-                name: 'Build the Future',
-                description: <>Studied online marketing and personal branding.</>,
+                name: 'Курс по нейросетям',
+                description: <>AI маркетинг</>,
             }
         ]
     },
     technical: {
         display: true, // set to false to hide this section
-        title: 'Technical skills',
+        title: 'Технические навыки',
         skills: [
             {
-                title: 'Figma',
-                description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+                title: 'Медиапланирование',
+                description: <>Комплексный анализ и оптимизация рекламных каналов с целью максимизации эффективности маркетинговых кампаний и достижения бизнес-целей.</>,
                 // optional: leave the array empty if you don't want to display images
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-02.jpg',
+                        src: '/images/projects/project-01/cover-03.png',
                         alt: 'Project image',
-                        width: 16,
+                        width: 21,
                         height: 9
                     },
+                    
+                ]
+            },
+            {
+                title: 'Интеграция CRM систем AMO/Birix24',
+                description: <>Профессиональная интеграция и настройка CRM-систем (AmoCRM, Bitrix24) для создания единого информационного пространства: автоматизация бизнес-процессов, управление sales-воронкой, сквозная аналитика и многоканальная коммуникация с клиентами в одном интерфейсе.</>,
+                // optional: leave the array empty if you don't want to display images
+                images: [
                     {
-                        src: '/images/projects/project-01/cover-03.jpg',
+                        src: '/images/projects/project-01/cover-04.png',
                         alt: 'Project image',
                         width: 16,
                         height: 9
@@ -142,18 +160,19 @@ const about = {
                 ]
             },
             {
-                title: 'Next.js',
-                description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+                title: 'Tilda',
+                description: <>Создание привлекательных, высококонверсионных landing page</>,
                 // optional: leave the array empty if you don't want to display images
-                images: [
-                    {
-                        src: '/images/projects/project-01/cover-04.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                ]
+                images: 
+            },
+            {
+                title: 'Canva',
+                description: <>Инструмент для создания профессиональных визуальных креативов - от статичных изображений и инфографики до анимированных видео и презентаций, обеспечивающий максимальную вовлеченность аудитории через яркий и эффективный визуальный контент.</>,
+                // optional: leave the array empty if you don't want to display images
+                images: 
             }
+            
+        
         ]
     }
 }
