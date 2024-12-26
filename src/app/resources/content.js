@@ -12,6 +12,13 @@ const person = {
     languages: []  // optional: Leave the array empty if you don't want to display languages
 }
 
+const pricing = {
+    label: 'Цены',
+    icon: 'dollar-sign',
+    title: 'Тарифные планы',
+    description: 'Выберите подходящий тариф для вашего бизнеса'
+}
+
 const newsletter = {
     display: false,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
@@ -280,4 +287,4 @@ const gallery = {
     ]
 }
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, pricing };
