@@ -13,7 +13,7 @@ const person = {
 }
 
 const newsletter = {
-    display: true,
+    display: false,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
     description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
 }
@@ -133,6 +133,16 @@ const about = {
         title: 'Технические навыки',
         skills: [
             {
+                title: 'Аналитика',
+                description: <>Глубокий опыт работы с GA4, Яндекс.Метрика, Facebook Pixel. Настройка сквозной аналитики и систем автоматической отчетности.</>,
+                images: []
+            },
+            {
+                title: 'Рекламные платформы',
+                description: <>Профессиональное управление рекламными кампаниями в Google Ads, Meta Ads, TikTok Ads с фокусом на ROI и конверсию.</>,
+                images: []
+            },
+            {
                 title: 'Медиапланирование',
                 description: <>Комплексный анализ и оптимизация рекламных каналов с целью максимизации эффективности маркетинговых кампаний и достижения бизнес-целей.</>,
                 // optional: leave the array empty if you don't want to display images
@@ -184,9 +194,9 @@ const blog = {
 }
 
 const work = {
-    label: 'Work',
-    title: 'My projects',
-    description: `Design and dev projects by ${person.name}`
+    label: 'Проекты',
+    title: 'Мои проекты',
+    description: `Самые крупные проекты с которыми работал ${person.name}`
     // Create new project pages by adding a new .mdx file to app/blog/posts
     // All projects will be listed on the /home and /work routes
 }
