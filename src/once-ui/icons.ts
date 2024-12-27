@@ -19,7 +19,7 @@ import {
    HiEnvelope,
    HiCalendarDays,
    HiClipboard,
-   HiCurrencyDollar // Добавлена эта строка
+   AiOutlineDollar // Добавлена эта строка
 } from "react-icons/hi2";
 
 import {
@@ -69,5 +69,5 @@ export const iconLibrary: Record<string, IconType> = {
    instagram: FaInstagram,
    whatsapp: FaWhatsapp, 
    clipboard: HiClipboard,
-   'dollar-sign': HiCurrencyDollar // Добавлена эта строка
+   'dollar-sign': AiOutlineDollar // Добавлена эта строка
 };
