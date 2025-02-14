@@ -4,8 +4,7 @@ import classNames from 'classnames';
 import Script from 'next/script';
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
-import { Inter } from 'next/font/google'
-import { Source_Code_Pro } from 'next/font/google';
+import { Inter, Source_Code_Pro } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { routing } from "@/i18n/routing";
@@ -13,17 +12,24 @@ import { renderContent } from "@/app/resources";
 import { Background, Flex } from "@/once-ui/components";
 
 // Определяем шрифты
-const primary = Inter({ subsets: ['latin'] });
-const code = Source_Code_Pro({ subsets: ['latin'] });
-const secondary = null; // Замените на реальный шрифт если нужен
-const tertiary = null;  // Замените на реальный шрифт если нужен
+const primary = Inter({ 
+   subsets: ['latin'],
+   display: 'swap',
+   variable: '--font-primary',
+});
+
+const code = Source_Code_Pro({ 
+   subsets: ['latin'],
+   display: 'swap',
+   variable: '--font-code',
+});
 
 // Определяем тип для props
 interface RootLayoutProps {
- children: React.ReactNode;
- params: {
-   locale: string;
- };
+   children: React.ReactNode;
+   params: {
+       locale: string;
+   };
 }
 
 export default async function RootLayout({
@@ -35,7 +41,8 @@ export default async function RootLayout({
    return (
        <NextIntlClientProvider messages={messages}>
            <Flex
-               as="html" lang="en"
+               as="html" 
+               lang="en"
                background="page"
                data-neutral={style.neutral} 
                data-brand={style.brand} 
@@ -47,10 +54,8 @@ export default async function RootLayout({
                data-surface={style.surface}
                data-transition={style.transition}
                className={classNames(
-                   primary.variable,
-                   secondary ? secondary.variable : '',
-                   tertiary ? tertiary.variable : '',
-                   code.variable
+                   primary.className,
+                   code.className
                )}>
                <Script
                    async
