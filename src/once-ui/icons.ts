@@ -19,8 +19,10 @@ import {
    HiEnvelope,
    HiCalendarDays,
    HiClipboard,
-   AiOutlineDollar // Добавлена эта строка
 } from "react-icons/hi2";
+
+// Добавляем новый импорт для AiOutlineDollar
+import { AiOutlineDollar } from "react-icons/ai";
 
 import {
    PiHouseDuotone,
@@ -69,5 +71,5 @@ export const iconLibrary: Record<string, IconType> = {
    instagram: FaInstagram,
    whatsapp: FaWhatsapp, 
    clipboard: HiClipboard,
-   'dollar-sign': AiOutlineDollar // Добавлена эта строка
+   'dollar-sign': AiOutlineDollar
 };
