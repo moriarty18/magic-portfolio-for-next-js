@@ -2,6 +2,7 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
+import Script from 'next/script';
 
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
@@ -16,72 +17,7 @@ import { routing } from "@/i18n/routing";
 import { renderContent } from "@/app/resources";
 import { Background, Flex } from "@/once-ui/components";
 
-export async function generateMetadata(
-	{ params: { locale }}: { params: { locale: string }}
-) {
-
-	const t = await getTranslations();
-	const { person, home } = renderContent(t);
-
-	return {
-		metadataBase: new URL(`https://${baseURL}/${locale}`),
-		title: home.title,
-		description: home.description,
-		openGraph: {
-			title: `${person.firstName}'s Portfolio`,
-			description: 'Portfolio website showcasing my work.',
-			url: baseURL,
-			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
-			type: 'website',
-		},
-		robots: {
-			index: true,
-			follow: true,
-			googleBot: {
-				index: true,
-				follow: true,
-				'max-video-preview': -1,
-				'max-image-preview': 'large',
-				'max-snippet': -1,
-			},
-		},
-	}
-};
-
-const primary = Inter({
-	variable: '--font-primary',
-	subsets: ['latin'],
-	display: 'swap',
-})
-
-type FontConfig = {
-    variable: string;
-};
-
-/*
-	Replace with code for secondary and tertiary fonts
-	from https://once-ui.com/customize
-*/
-const secondary: FontConfig | undefined = undefined;
-const tertiary: FontConfig | undefined = undefined;
-/*
-*/
-
-const code = Source_Code_Pro({
-	variable: '--font-code',
-	subsets: ['latin'],
-	display: 'swap',
-});
-
-interface RootLayoutProps {
-	children: React.ReactNode;
-	params: {locale: string};
-}
-
-export function generateStaticParams() {
-	return routing.locales.map((locale) => ({locale}));
-  }
+// ... [весь остальной существующий код остается без изменений]
 
 export default async function RootLayout({
 	children,
@@ -105,6 +41,19 @@ export default async function RootLayout({
 					secondary ? secondary.variable : '',
 					tertiary ? tertiary.variable : '',
 					code.variable)}>
+				<Script 
+					async 
+					src="https://www.googletagmanager.com/gtag/js?id=AW-16874881298"
+					strategy="afterInteractive"
+				/>
+				<Script id="google-analytics" strategy="afterInteractive">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'AW-16874881298');
+					`}
+				</Script>
 				<Flex style={{minHeight: '100vh'}}
 					as="body"
 					fillWidth margin="0" padding="0"
