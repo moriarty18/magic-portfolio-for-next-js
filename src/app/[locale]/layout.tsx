@@ -13,7 +13,7 @@ import { renderContent } from "@/app/resources";
 import { Background, Flex } from "@/once-ui/components";
 import { Analytics } from '@vercel/analytics/next';
 
-const GTM_ID = 'GTM-WCRPDD5Z';
+const GTM_ID = 'GTM-WCRDPD5Z';
 
 export async function generateMetadata(
     { params: { locale }}: { params: { locale: string }}
