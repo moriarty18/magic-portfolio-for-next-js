@@ -12,6 +12,7 @@ import { routing } from "@/i18n/routing";
 import { renderContent } from "@/app/resources";
 import { Background, Flex } from "@/once-ui/components";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const GTM_ID = 'GTM-WCRDPD5Z';
 
@@ -159,6 +160,7 @@ export default async function RootLayout({
                     </Flex>
                     <Footer/>
                     <Analytics />
+                    <SpeedInsights />
                 </Flex>
             </Flex>
         </NextIntlClientProvider>
