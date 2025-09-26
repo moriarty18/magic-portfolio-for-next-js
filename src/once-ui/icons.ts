@@ -41,6 +41,15 @@ import {
    FaWhatsapp
 } from "react-icons/fa6";
 
+/**
+ * @name iconLibrary
+ * @description
+ * A comprehensive library of icons used throughout the application. It maps a
+ * string-based key (e.g., 'chevronUp') to an actual icon component from various
+ * `react-icons` libraries. This allows for easy and consistent use of icons
+ * by referencing their string name.
+ * @type {Record<string, IconType>}
+ */
 export const iconLibrary: Record<string, IconType> = {
    chevronUp: HiChevronUp,
    chevronDown: HiChevronDown,

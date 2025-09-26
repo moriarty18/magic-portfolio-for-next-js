@@ -5,6 +5,15 @@ import classNames from 'classnames';
 import styles from './Arrow.module.scss';
 import { Flex } from '.';
 
+/**
+ * @interface ArrowProps
+ * @description Defines the props for the Arrow component.
+ * @property {string} trigger - A CSS selector for the element that will trigger the arrow's animation on hover.
+ * @property {number} [scale=0.8] - The scale factor of the arrow.
+ * @property {'onBackground' | 'onSolid'} [color='onBackground'] - The color theme of the arrow.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the arrow container.
+ * @property {string} [className] - Optional CSS class name for the arrow container.
+ */
 interface ArrowProps {
     trigger: string;
     scale?: number;
@@ -13,6 +22,19 @@ interface ArrowProps {
     className?: string;
 }
 
+/**
+ * @name Arrow
+ * @description
+ * A component that renders an animated arrow. The arrow becomes visible and animates
+ * when the user hovers over a specified trigger element.
+ * @param {ArrowProps} props - The props for the component.
+ * @returns {React.ReactElement} The rendered Arrow component.
+ * @example
+ * <Button id="my-button">
+ *   Hover me
+ *   <Arrow trigger="#my-button" />
+ * </Button>
+ */
 const Arrow: React.FC<ArrowProps> = ({
     trigger,
     scale = 0.8,

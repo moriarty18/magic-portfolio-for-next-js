@@ -5,6 +5,26 @@ import classNames from 'classnames';
 import { Flex, IconButton } from '.';
 import styles from './Scroller.module.scss';
 
+/**
+ * @interface ScrollerProps
+ * @description Defines the props for the Scroller component.
+ * @property {React.ReactNode} children - The content to be placed inside the scroller.
+ * @property {'row' | 'column'} [direction='row'] - The direction of scrolling.
+ * @property {boolean} [contained=false] - If true, the scroller will have a styled container with borders and padding.
+ * @property {string} [className] - Optional CSS class name for the main container.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the main container.
+ * @property {any} [key: string] - Allows any other props to be passed down to the inner Flex component.
+ */
+/**
+ * @interface ScrollerProps
+ * @description Defines the props for the Scroller component.
+ * @property {React.ReactNode} children - The content to be placed inside the scroller.
+ * @property {'row' | 'column'} [direction='row'] - The direction of scrolling.
+ * @property {boolean} [contained=false] - If true, the scroller will have a styled container with borders and padding.
+ * @property {string} [className] - Optional CSS class name for the main container.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the main container.
+ * @property {any} [key: string] - Allows any other props to be passed down to the inner Flex component.
+ */
 interface ScrollerProps {
     children: React.ReactNode;
     direction?: 'row' | 'column';
@@ -14,6 +34,19 @@ interface ScrollerProps {
     [key: string]: any;
 }
 
+/**
+ * @name Scroller
+ * @description
+ * A component that provides a scrollable area for its children. It automatically
+ * displays navigation buttons (prev/next) when the content overflows the container.
+ * It supports both horizontal and vertical scrolling.
+ * @param {ScrollerProps} props - The props for the component.
+ * @returns {React.ReactElement} The rendered Scroller component.
+ * @example
+ * <Scroller direction="row" contained>
+ *   {items.map(item => <div key={item.id}>{item.content}</div>)}
+ * </Scroller>
+ */
 const Scroller: React.FC<ScrollerProps> = ({
     children,
     direction = 'row',

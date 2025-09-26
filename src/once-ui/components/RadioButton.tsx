@@ -5,6 +5,32 @@ import classNames from 'classnames';
 import { Flex, InteractiveDetails, InteractiveDetailsProps } from '.';
 import styles from './SharedInteractiveStyles.module.scss';
 
+/**
+ * @interface RadioButtonProps
+ * @description Defines the props for the RadioButton component.
+ * @extends Omit<InteractiveDetailsProps, 'onClick'>
+ * @extends React.InputHTMLAttributes<HTMLInputElement>
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component's container.
+ * @property {string} [className] - Optional CSS class name for the component's container.
+ * @property {boolean} [isChecked] - The checked state of the radio button. Used for controlled components.
+ * @property {string} [name] - The name attribute, used to group radio buttons.
+ * @property {string} [value] - The value attribute for the radio button.
+ * @property {boolean} [disabled] - If true, the radio button is disabled.
+ * @property {() => void} [onToggle] - A callback function to be invoked when the radio button is toggled.
+ */
+/**
+ * @interface RadioButtonProps
+ * @description Defines the props for the RadioButton component.
+ * @extends Omit<InteractiveDetailsProps, 'onClick'>
+ * @extends React.InputHTMLAttributes<HTMLInputElement>
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component's container.
+ * @property {string} [className] - Optional CSS class name for the component's container.
+ * @property {boolean} [isChecked] - The checked state of the radio button. Used for controlled components.
+ * @property {string} [name] - The name attribute, used to group radio buttons.
+ * @property {string} [value] - The value attribute for the radio button.
+ * @property {boolean} [disabled] - If true, the radio button is disabled.
+ * @property {() => void} [onToggle] - A callback function to be invoked when the radio button is toggled.
+ */
 interface RadioButtonProps extends Omit<InteractiveDetailsProps, 'onClick'>, React.InputHTMLAttributes<HTMLInputElement> {
     style?: React.CSSProperties;
     className?: string;
@@ -17,6 +43,15 @@ interface RadioButtonProps extends Omit<InteractiveDetailsProps, 'onClick'>, Rea
 
 const generateId = () => `radio-${Math.random().toString(36).substring(2, 9)}`;
 
+/**
+ * @name RadioButton
+ * @description
+ * A styled and accessible radio button component. It can be used as a controlled or
+ * uncontrolled component and should be used in groups by providing the same `name` prop.
+ * @param {RadioButtonProps} props - The props for the component.
+ * @param {React.Ref<HTMLInputElement>} ref - A ref for the underlying input element.
+ * @returns {React.ReactElement} The rendered RadioButton component.
+ */
 const RadioButton: React.FC<RadioButtonProps> = forwardRef<HTMLInputElement, RadioButtonProps>(({
     style,
     className,

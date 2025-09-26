@@ -10,13 +10,27 @@ import { routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate'
 
+/**
+ * @interface BlogParams
+ * @description Defines the shape of the parameters object for a single blog post page.
+ * @property {object} params - The parameters object.
+ * @property {string} params.slug - The unique identifier (slug) for the blog post.
+ * @property {string} params.locale - The current language locale.
+ */
 interface BlogParams {
-    params: { 
+    params: {
         slug: string;
 		locale: string;
     };
 }
 
+/**
+ * @name generateStaticParams
+ * @description
+ * Generates the static parameters for all blog post pages across all supported locales.
+ * This function is used by Next.js to pre-render all the dynamic routes at build time.
+ * @returns {Promise<{ slug: string; locale: string }[]>} A promise that resolves to an array of all possible slug-locale combinations.
+ */
 export async function generateStaticParams() {
 	const locales = routing.locales;
     
@@ -35,6 +49,14 @@ export async function generateStaticParams() {
     return allPosts;
 }
 
+/**
+ * @name generateMetadata
+ * @description
+ * Dynamically generates metadata for a single blog post page based on its frontmatter.
+ * This includes the title, description, and Open Graph/Twitter card information.
+ * @param {BlogParams} { params: { slug, locale } } - The parameters for the blog post, including slug and locale.
+ * @returns {object | undefined} The metadata object for the page, or undefined if the post is not found.
+ */
 export function generateMetadata({ params: { slug, locale } }: BlogParams) {
 	let post = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]).find((post) => post.slug === slug)
 
@@ -76,6 +98,15 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
 	}
 }
 
+/**
+ * @name Blog
+ * @description
+ * Renders a single blog post page. It fetches the post's content and metadata based on the slug and locale,
+ * displays it using the `CustomMDX` component, and includes structured data (JSON-LD) for SEO.
+ * If the post is not found, it renders a 404 page.
+ * @param {BlogParams} { params } - The parameters for the blog post, including slug and locale.
+ * @returns {React.ReactElement} The rendered blog post page.
+ */
 export default function Blog({ params }: BlogParams) {
 	unstable_setRequestLocale(params.locale);
 	let post = getPosts(['src', 'app', '[locale]', 'blog', 'posts', params.locale]).find((post) => post.slug === params.slug)

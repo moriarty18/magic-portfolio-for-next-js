@@ -3,6 +3,18 @@
 import React, { useEffect, useState, forwardRef } from 'react';
 import styles from './GlitchFx.module.scss';
 
+/**
+ * @interface GlitchFxProps
+ * @description Defines the props for the GlitchFx component.
+ * @extends React.HTMLAttributes<HTMLDivElement>
+ * @property {React.ReactNode} children - The content to which the glitch effect will be applied.
+ * @property {'slow' | 'medium' | 'fast'} [speed='medium'] - The speed of the glitch animation.
+ * @property {number} [interval=2500] - The time in milliseconds between glitches when `trigger` is 'custom'.
+ * @property {'instant' | 'hover' | 'custom'} [trigger='instant'] - Defines how the glitch effect is activated.
+ * @property {boolean} [continuous=true] - If true, the glitch effect runs continuously.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component's container.
+ * @property {string} [className] - Optional CSS class name for the component's container.
+ */
 interface GlitchFxProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
     speed?: 'slow' | 'medium' | 'fast';
@@ -13,6 +25,19 @@ interface GlitchFxProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
 }
 
+/**
+ * @name GlitchFx
+ * @description
+ * A component that applies a CSS-based glitch visual effect to its children.
+ * The effect's activation can be controlled to be instant, on hover, or at a custom interval.
+ * @param {GlitchFxProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered component with the glitch effect.
+ * @example
+ * <GlitchFx trigger="hover" speed="fast">
+ *   <p>Hover over me to see the glitch effect.</p>
+ * </GlitchFx>
+ */
 const GlitchFx = forwardRef<HTMLDivElement, GlitchFxProps>(({
     children,
     speed = 'medium',

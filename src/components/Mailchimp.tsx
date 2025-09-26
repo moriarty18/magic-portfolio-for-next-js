@@ -6,6 +6,16 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 
+/**
+ * @name debounce
+ * @description
+ * A utility function that creates a debounced version of a function.
+ * The debounced function will only be called after it has not been called for a specified amount of time.
+ * @template T - The type of the function to debounce.
+ * @param {T} func - The function to debounce.
+ * @param {number} delay - The debounce delay in milliseconds.
+ * @returns {T} - The debounced function.
+ */
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
     let timeout: ReturnType<typeof setTimeout>;
     return ((...args: Parameters<T>) => {
@@ -14,12 +24,28 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T
     }) as T;
 }
 
+/**
+ * @name NewsletterProps
+ * @description
+ * Props for the Mailchimp component.
+ * @property {boolean} display - Whether to display the newsletter signup form.
+ * @property {string | JSX.Element} title - The title of the newsletter section.
+ * @property {string | JSX.Element} description - The description of the newsletter section.
+ */
 type NewsletterProps = {
     display: boolean;
     title: string | JSX.Element;
     description: string | JSX.Element;
 }
 
+/**
+ * @name Mailchimp
+ * @description
+ * A component that renders a Mailchimp newsletter signup form.
+ * It includes email validation with debouncing to provide a better user experience.
+ * @param {{ newsletter: NewsletterProps }} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered component.
+ */
 export const Mailchimp = (
     { newsletter }: { newsletter: NewsletterProps}
 ) => {

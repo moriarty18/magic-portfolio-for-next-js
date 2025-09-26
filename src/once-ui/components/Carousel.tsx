@@ -3,11 +3,26 @@
 import { Flex, RevealFx, Scroller, SmartImage } from "@/once-ui/components";
 import { useEffect, useState } from "react";
 
+/**
+ * @interface Image
+ * @description Defines the structure for a single image in the carousel.
+ * @property {string} src - The source URL of the image.
+ * @property {string} alt - The alternative text for the image.
+ */
 interface Image {
     src: string;
     alt: string;
 }
 
+/**
+ * @interface CarouselProps
+ * @description Defines the props for the Carousel component.
+ * @property {Image[]} images - An array of image objects to display in the carousel.
+ * @property {'line' | 'thumbnail'} [indicator='line'] - The type of indicator to use for navigation.
+ * @property {string} [aspectRatio='16 / 9'] - The aspect ratio for the main image display.
+ * @property {string} [sizes] - The `sizes` attribute for the responsive `SmartImage` component.
+ * @property {boolean} [revealedByDefault=false] - If true, the initial reveal animation is skipped.
+ */
 interface CarouselProps {
     images: Image[];
     indicator?: 'line' | 'thumbnail';
@@ -16,6 +31,15 @@ interface CarouselProps {
     revealedByDefault?: boolean;
 }
 
+/**
+ * @name Carousel
+ * @description
+ * A component that displays a collection of images in a carousel format. It supports
+ * navigation by clicking the main image or using line or thumbnail indicators.
+ * It includes a reveal animation on load.
+ * @param {CarouselProps} props - The props for the component.
+ * @returns {React.ReactElement | null} The rendered Carousel component, or null if no images are provided.
+ */
 const Carousel: React.FC<CarouselProps> = ({
     images = [],
     indicator = 'line',

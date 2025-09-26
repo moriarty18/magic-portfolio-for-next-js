@@ -3,6 +3,12 @@ import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components"
 import { useTranslations } from "next-intl";
 import styles from './Footer.module.scss'
 
+/**
+ * @name Footer
+ * @description
+ * The footer component for the application.
+ * It displays the copyright information, the owner's name, and social media links.
+ */
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
 

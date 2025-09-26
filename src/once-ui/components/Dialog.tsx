@@ -6,11 +6,32 @@ import classNames from 'classnames';
 import { Flex, Heading, IconButton, Button, ButtonProps, Text } from '.';
 import styles from './Dialog.module.scss';
 
+/**
+ * @interface DialogButtonProps
+ * @description Defines the props for a button within the Dialog component's footer.
+ * @extends Partial<ButtonProps>
+ * @property {string} label - The text label for the button.
+ * @property {React.MouseEventHandler<HTMLButtonElement>} [onClick] - The callback function to execute when the button is clicked.
+ */
 interface DialogButtonProps extends Partial<ButtonProps> {
     label: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
+/**
+ * @interface DialogProps
+ * @description Defines the props for the Dialog component.
+ * @property {boolean} isOpen - Controls whether the dialog is open or closed.
+ * @property {() => void} onClose - The callback function to call when the dialog should be closed (e.g., via the close button or Escape key).
+ * @property {ReactNode} title - The title to be displayed in the dialog's header.
+ * @property {ReactNode} [description] - An optional description to display below the title.
+ * @property {ReactNode} children - The main content to be rendered inside the dialog.
+ * @property {DialogButtonProps} [primaryButtonProps] - Props for the primary action button.
+ * @property {DialogButtonProps} [secondaryButtonProps] - Props for the secondary action button.
+ * @property {DialogButtonProps} [dangerButtonProps] - Props for the danger action button.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the dialog overlay.
+ * @property {string} [className] - Optional CSS class name for the dialog overlay.
+ */
 interface DialogProps {
     isOpen: boolean;
     onClose: () => void;
@@ -24,6 +45,16 @@ interface DialogProps {
     className?: string;
 }
 
+/**
+ * @name Dialog
+ * @description
+ * An accessible modal dialog component that renders into a portal. It traps focus
+ * within the dialog and can be closed by pressing the Escape key or clicking the
+ * close button.
+ * @param {DialogProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the dialog's overlay element.
+ * @returns {React.ReactPortal | null} The rendered Dialog component as a portal, or null if not open.
+ */
 const Dialog: React.FC<DialogProps> = forwardRef<HTMLDivElement, DialogProps>(({
     isOpen,
     onClose,

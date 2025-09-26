@@ -5,6 +5,14 @@ import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
+/**
+ * @name generateMetadata
+ * @description
+ * Dynamically generates metadata for the work/projects page. This includes the page title,
+ * description, and Open Graph/Twitter card information, tailored for the current locale.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {Promise<object>} A promise that resolves to the metadata object for the page.
+ */
 export async function generateMetadata(
     {params: {locale}}: { params: { locale: string }}
 ) {
@@ -40,6 +48,15 @@ export async function generateMetadata(
 	};
 }
 
+/**
+ * @name Work
+ * @description
+ * The main component for the work/projects listing page. It fetches all projects
+ * and renders them using the `Projects` component. It also includes structured
+ * data (JSON-LD) for a `CollectionPage` to improve SEO.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {React.ReactElement} The rendered work page component.
+ */
 export default function Work(
     { params: {locale}}: { params: { locale: string }}
 ) {

@@ -4,6 +4,16 @@ import { getTranslations } from 'next-intl/server';
 
 export const runtime = 'edge';
 
+/**
+ * @name GET
+ * @description
+ * This is an API route that dynamically generates an Open Graph (OG) image.
+ * It receives a `title` from the request's query parameters and uses it to create a
+ * custom image response. The image includes the title, the author's name, role, and avatar.
+ * This is used to create rich previews when sharing links on social media.
+ * @param {Request} request - The incoming request object.
+ * @returns {Promise<ImageResponse>} A promise that resolves to an `ImageResponse` object.
+ */
 export async function GET(request: Request) {
     let url = new URL(request.url)
     let title = url.searchParams.get('title') || 'Portfolio'

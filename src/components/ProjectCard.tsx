@@ -4,15 +4,33 @@ import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text } fro
 import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
 
+/**
+ * @name ProjectCardProps
+ * @description
+ * Props for the ProjectCard component.
+ * @property {string} href - The URL to the project details page.
+ * @property {string[]} images - An array of image URLs for the project carousel.
+ * @property {string} title - The title of the project.
+ * @property {string} content - The main content or body of the project.
+ * @property {string} description - A short description of the project.
+ * @property {{ src: string }[]} avatars - An array of avatar objects for project contributors.
+ */
 interface ProjectCardProps {
     href: string;
     images: string[];
-    title: string;
+    title:string;
     content: string;
     description: string;
     avatars: { src: string }[];
 }
 
+/**
+ * @name ProjectCard
+ * @description
+ * A component that displays a project card with an image carousel, title, description, and a link to the project page.
+ * @param {ProjectCardProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered component.
+ */
 export const ProjectCard: React.FC<ProjectCardProps> = ({
     href,
     images = [],

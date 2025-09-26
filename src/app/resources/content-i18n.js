@@ -1,5 +1,14 @@
 import { InlineCode } from "@/once-ui/components";
 
+/**
+ * @name createI18nContent
+ * @description
+ * A factory function that creates and returns an object containing all the
+ * internationalized content for the application. It uses the `t` function
+ * provided by `next-intl` to translate strings.
+ * @param {function} t - The translation function from `useTranslations` or `getTranslations`.
+ * @returns {object} An object containing all the content for the site (person, social, newsletter, etc.).
+ */
 const createI18nContent = (t) => {
     const person = {
         firstName: 'Aziz',

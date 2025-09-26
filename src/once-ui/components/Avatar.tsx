@@ -5,6 +5,18 @@ import React, { forwardRef } from 'react';
 import { Skeleton, Icon, Text, StatusIndicator, Flex, SmartImage } from '.';
 import styles from './Avatar.module.scss';
 
+/**
+ * @interface AvatarProps
+ * @description Defines the props for the Avatar component.
+ * @property {'xs' | 's' | 'm' | 'l' | 'xl'} [size='m'] - The size of the avatar.
+ * @property {string} [value] - The initials to display if no `src` is provided. Cannot be used with `src`.
+ * @property {string} [src] - The URL of the image to display. Cannot be used with `value`.
+ * @property {boolean} [loading] - If true, displays a skeleton loader.
+ * @property {boolean} [empty] - If true, displays a generic person icon.
+ * @property {{color: 'green' | 'yellow' | 'red' | 'gray'}} [statusIndicator] - An optional status indicator to display on the avatar.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the avatar container.
+ * @property {string} [className] - Optional CSS class name for the avatar container.
+ */
 interface AvatarProps {
     size?: 'xs' | 's' | 'm' | 'l' | 'xl';
     value?: string;
@@ -34,6 +46,17 @@ const statusIndicatorSizeMapping: Record<'xs' | 's' | 'm' | 'l' | 'xl', 's' | 'm
     xl: 'l',
 };
 
+/**
+ * @name Avatar
+ * @description
+ * A component to display a user's avatar. It can render an image from a URL,
+ * user initials, or a default icon. It also supports loading and empty states,
+ * and can display an optional status indicator.
+ * @param {AvatarProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered Avatar component.
+ * @throws {Error} If both `value` and `src` props are provided.
+ */
 const Avatar: React.FC<AvatarProps> = forwardRef<HTMLDivElement, AvatarProps>(({
     size = 'm',
     value,

@@ -5,6 +5,20 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { Icon } from '.';
 
+/**
+ * @interface SmartLinkProps
+ * @description Defines the props for the SmartLink component.
+ * @extends React.AnchorHTMLAttributes<HTMLAnchorElement>
+ * @property {string} href - The URL for the link. Required.
+ * @property {string} [prefixIcon] - The name of an icon to display before the link content.
+ * @property {string} [suffixIcon] - The name of an icon to display after the link content.
+ * @property {'xs' | 's' | 'm' | 'l' | 'xl'} [iconSize='xs'] - The size of the prefix or suffix icon.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the link.
+ * @property {string} [className] - Optional CSS class name for the link.
+ * @property {boolean} [selected] - If true, applies an underline style to indicate a selected or active state.
+ * @property {boolean} [unstyled=false] - If true, removes all default styling from the link.
+ * @property {ReactNode} children - The content of the link.
+ */
 interface SmartLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     href: string;
     prefixIcon?: string;
@@ -17,6 +31,16 @@ interface SmartLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     children: ReactNode;
 }
 
+/**
+ * @name SmartLink
+ * @description
+ * An intelligent link component that automatically uses Next.js's `Link` for internal
+ * routes and a standard `<a>` tag (with `target="_blank"`) for external URLs. It can be
+ * styled with prefix/suffix icons or be completely unstyled.
+ * @param {SmartLinkProps} props - The props for the component.
+ * @param {React.Ref<HTMLAnchorElement>} ref - A ref for the component's root anchor element.
+ * @returns {React.ReactElement} The rendered SmartLink component.
+ */
 const SmartLink = forwardRef<HTMLAnchorElement, SmartLinkProps>(({ 
         href,
         prefixIcon,

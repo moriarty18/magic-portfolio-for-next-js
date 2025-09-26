@@ -1,5 +1,12 @@
 import { Flex, Heading, Text } from "@/once-ui/components";
 
+/**
+ * @name NotFound
+ * @description
+ * A component that renders the 404 "Page Not Found" error page.
+ * It displays a simple message to the user indicating that the requested page could not be found.
+ * @returns {React.ReactElement} The rendered 404 page component.
+ */
 export default function NotFound() {
     return (
         <Flex

@@ -1,5 +1,16 @@
 import { InlineCode } from "@/once-ui/components";
 
+/**
+ * @name person
+ * @description An object containing personal information.
+ * @property {string} firstName - The first name.
+ * @property {string} lastName - The last name.
+ * @property {string} name - The full name, derived from first and last names.
+ * @property {string} role - The professional role or title.
+ * @property {string} avatar - The path to the avatar image.
+ * @property {string} location - The IANA time zone identifier (e.g., 'Europe/Vienna').
+ * @property {string[]} languages - An array of languages spoken.
+ */
 const person = {
     firstName: 'Азиз',
     lastName:  'Кожанов',
@@ -12,6 +23,14 @@ const person = {
     languages: []  // optional: Leave the array empty if you don't want to display languages
 }
 
+/**
+ * @name pricing
+ * @description Content for the pricing page.
+ * @property {string} label - The label for the pricing page link.
+ * @property {string} icon - The icon for the pricing page link.
+ * @property {string} title - The main title of the pricing page.
+ * @property {string} description - The description of the pricing page.
+ */
 const pricing = {
     label: 'Цены',
     icon: 'dollar-sign',
@@ -19,12 +38,24 @@ const pricing = {
     description: 'Выберите подходящий тариф для вашего бизнеса'
 }
 
+/**
+ * @name newsletter
+ * @description Configuration and content for the newsletter signup component.
+ * @property {boolean} display - Whether to display the newsletter component.
+ * @property {JSX.Element} title - The title of the newsletter section.
+ * @property {JSX.Element} description - The description of the newsletter section.
+ */
 const newsletter = {
     display: false,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
     description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
 }
 
+/**
+ * @name social
+ * @description An array of social media links.
+ * @type {{name: string, icon: string, link: string}[]}
+ */
 const social = [
     // Links are automatically displayed.
     // Import new icons in /once-ui/icons.ts
@@ -50,6 +81,15 @@ const social = [
     },
 ]
 
+/**
+ * @name home
+ * @description Content for the home page.
+ * @property {string} label - The label for the home page link.
+ * @property {string} title - The title of the home page.
+ * @property {string} description - The meta description for the home page.
+ * @property {JSX.Element} headline - The main headline on the page.
+ * @property {JSX.Element} subline - The subline or introductory text.
+ */
 const home = {
     label: 'Главная',
     title: `${person.name}'s Portfolio`,
@@ -58,6 +98,20 @@ const home = {
     subline: <>Привет! Я Азиз 👋 Digital-маркетолог, превращаю рекламные бюджеты в  <InlineCode>прибыль</InlineCode>, последние 7 лет помогаю бизнесу масштабироваться через системный digital-маркетинг, <br/> специализируюсь на создании воронок продаж и автоматизации маркетинга.</>
 }
 
+/**
+ * @name about
+ * @description Content and configuration for the "About" page.
+ * @property {string} label - The label for the about page link.
+ * @property {string} title - The title of the about page.
+ * @property {string} description - The meta description for the about page.
+ * @property {object} tableOfContent - Settings for the table of contents.
+ * @property {object} avatar - Settings for the avatar display.
+ * @property {object} calendar - Settings for the calendar/booking link.
+ * @property {object} intro - The introductory section of the about page.
+ * @property {object} work - The work experience section.
+ * @property {object} studies - The studies and education section.
+ * @property {object} technical - The technical skills section.
+ */
 const about = {
     label: 'Резюме',
     title: 'Обо мне',
@@ -192,6 +246,13 @@ const about = {
     }
 }
 
+/**
+ * @name blog
+ * @description Content and configuration for the blog page.
+ * @property {string} label - The label for the blog page link.
+ * @property {string} title - The title of the blog page.
+ * @property {string} description - The meta description for the blog page.
+ */
 const blog = {
     label: 'Blog',
     title: 'Writing about design and tech...',
@@ -200,6 +261,13 @@ const blog = {
     // All posts will be listed on the /blog route
 }
 
+/**
+ * @name work
+ * @description Content and configuration for the work/projects page.
+ * @property {string} label - The label for the work page link.
+ * @property {string} title - The title of the work page.
+ * @property {string} description - The meta description for the work page.
+ */
 const work = {
     label: 'Проекты',
     title: 'Мои проекты',
@@ -208,6 +276,14 @@ const work = {
     // All projects will be listed on the /home and /work routes
 }
 
+/**
+ * @name gallery
+ * @description Content and configuration for the gallery page.
+ * @property {string} label - The label for the gallery page link.
+ * @property {string} title - The title of the gallery page.
+ * @property {string} description - The meta description for the gallery page.
+ * @property {{src: string, alt: string, orientation: 'vertical'|'horizontal'}[]} images - An array of images for the gallery.
+ */
 const gallery = {
     label: 'Gallery',
     title: 'My photo gallery',

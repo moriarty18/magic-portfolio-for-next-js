@@ -5,6 +5,15 @@ import { Flex, Icon, Heading } from '.';
 import styles from './Accordion.module.scss';
 import classNames from 'classnames';
 
+/**
+ * @interface AccordionProps
+ * @description Defines the props for the Accordion component.
+ * @property {React.ReactNode} title - The title to be displayed in the accordion header.
+ * @property {React.ReactNode} children - The content to be displayed when the accordion is open.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the accordion container.
+ * @property {string} [className] - Optional CSS class name for the accordion container.
+ * @property {boolean} [open=false] - Whether the accordion should be open by default.
+ */
 interface AccordionProps {
     title: React.ReactNode;
     children: React.ReactNode;
@@ -13,6 +22,28 @@ interface AccordionProps {
     open?: boolean;
 }
 
+/**
+ * @name Accordion
+ * @description
+ * A collapsible content component that allows users to show and hide sections of content.
+ * The component's state (open/closed) can be controlled externally via a ref, which exposes
+ * `toggle`, `open`, and `close` methods.
+ * @param {AccordionProps} props - The props for the component.
+ * @param {React.Ref} ref - A ref that can be used to imperatively control the accordion.
+ * @returns {React.ReactElement} The rendered Accordion component.
+ * @example
+ * const accordionRef = useRef(null);
+ * const handleToggle = () => {
+ *   if (accordionRef.current) {
+ *     accordionRef.current.toggle();
+ *   }
+ * };
+ *
+ * <Accordion ref={accordionRef} title="Section 1">
+ *   <p>Content for section 1.</p>
+ * </Accordion>
+ * <button onClick={handleToggle}>Toggle Section 1</button>
+ */
 const Accordion: React.FC<AccordionProps> = forwardRef(({
     title,
     children,

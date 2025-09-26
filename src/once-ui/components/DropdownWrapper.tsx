@@ -6,6 +6,17 @@ import { Flex, Dropdown, DropdownProps, DropdownOptions } from '.';
 import styles from './Select.module.scss';
 import classNames from 'classnames';
 
+/**
+ * @interface DropdownWrapperProps
+ * @description Defines the props for the DropdownWrapper component.
+ * @property {ReactNode} children - The trigger element that, when clicked, will open the dropdown.
+ * @property {DropdownOptions[]} dropdownOptions - An array of option objects to be passed to the Dropdown.
+ * @property {Omit<DropdownProps, 'options'> & { onOptionSelect?: (option: DropdownOptions) => void }} [dropdownProps] - Props to be passed down to the underlying `Dropdown` component.
+ * @property {string} [selectedOption] - The value of the currently selected option, used to highlight it in the dropdown.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the wrapper container.
+ * @property {string} [className] - Optional CSS class name for the wrapper container.
+ * @property {() => ReactNode} [renderCustomDropdownContent] - An optional function to render custom, non-option content inside the dropdown.
+ */
 interface DropdownWrapperProps {
     children: ReactNode;
     dropdownOptions: DropdownOptions[];
@@ -16,6 +27,17 @@ interface DropdownWrapperProps {
     renderCustomDropdownContent?: () => ReactNode;
 }
 
+/**
+ * @name DropdownWrapper
+ * @description
+ * A higher-order component that wraps a trigger element and a `Dropdown`. It manages
+ * the visibility and positioning of the dropdown using `@floating-ui/react-dom`. It
+ * handles opening the dropdown on click, and closing it on outside clicks or when the
+ * Escape key is pressed.
+ * @param {DropdownWrapperProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root wrapper element.
+ * @returns {React.ReactElement} The rendered DropdownWrapper with its trigger and the conditionally rendered dropdown.
+ */
 const DropdownWrapper = forwardRef<HTMLDivElement, DropdownWrapperProps>(({
     children,
     dropdownOptions,

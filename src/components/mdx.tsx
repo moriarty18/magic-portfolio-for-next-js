@@ -8,6 +8,12 @@ import { HeadingLink } from '@/components';
 import { TextProps } from '@/once-ui/interfaces';
 import { SmartImageProps } from '@/once-ui/components/SmartImage';
 
+/**
+ * @name TableProps
+ * @description
+ * Props for the Table component.
+ * @property {{ headers: string[]; rows: string[][] }} data - The data for the table, including headers and rows.
+ */
 type TableProps = {
     data: {
         headers: string[];
@@ -15,6 +21,13 @@ type TableProps = {
     };
 };
 
+/**
+ * @name Table
+ * @description
+ * A component that renders a simple HTML table from a data object.
+ * @param {TableProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered table component.
+ */
 function Table({ data }: TableProps) {
     const headers = data.headers.map((header, index) => (
         <th key={index}>{header}</th>
@@ -37,11 +50,26 @@ function Table({ data }: TableProps) {
     );
 }
 
+/**
+ * @name CustomLinkProps
+ * @description
+ * Props for the CustomLink component.
+ * @property {string} href - The URL for the link.
+ * @property {ReactNode} children - The content of the link.
+ */
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
     href: string;
     children: ReactNode;
 };
 
+/**
+ * @name CustomLink
+ * @description
+ * A custom link component that handles internal, hash, and external links appropriately.
+ * Internal links use Next.js's `SmartLink`, while external links open in a new tab.
+ * @param {CustomLinkProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered link component.
+ */
 function CustomLink({ href, children, ...props }: CustomLinkProps) {
     if (href.startsWith('/')) {
         return (
@@ -62,6 +90,13 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
     );
 }
 
+/**
+ * @name createImage
+ * @description
+ * A factory function to create a `SmartImage` component with default styling for use in MDX.
+ * @param {SmartImageProps & { src: string }} props - The props for the SmartImage component, with `src` being mandatory.
+ * @returns {React.ReactElement | null} - The rendered SmartImage component or null if src is missing.
+ */
 function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) {
     if (!src) {
         console.error("SmartImage requires a valid 'src' property.");
@@ -80,6 +115,14 @@ function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) 
         )
 }
 
+/**
+ * @name slugify
+ * @description
+ * Converts a string into a URL-friendly slug.
+ * It lowercases the string, replaces spaces with hyphens, removes special characters, and trims extra hyphens.
+ * @param {string} str - The string to slugify.
+ * @returns {string} - The slugified string.
+ */
 function slugify(str: string): string {
     return str
         .toString()
@@ -91,6 +134,14 @@ function slugify(str: string): string {
         .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
+/**
+ * @name createHeading
+ * @description
+ * A higher-order function that creates a heading component of a specific level (1-6).
+ * The generated heading component uses `HeadingLink` to automatically create an anchor link with a slugified ID.
+ * @param {1 | 2 | 3 | 4 | 5 | 6} level - The heading level to create.
+ * @returns {React.FC<TextProps>} - A heading component.
+ */
 function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
     const CustomHeading = ({ children, ...props }: TextProps) => {
     const slug = slugify(children as string);
@@ -110,6 +161,13 @@ function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
     return CustomHeading;
 }
 
+/**
+ * @name createParagraph
+ * @description
+ * A component that renders a paragraph with specific styling for use in MDX.
+ * @param {TextProps} props - The props for the Text component.
+ * @returns {React.ReactElement} - The rendered paragraph component.
+ */
 function createParagraph({ children }: TextProps) {
     return (
         <Text style={{lineHeight: '150%'}}
@@ -136,10 +194,24 @@ const components = {
     CodeBlock
 };
 
+/**
+ * @name CustomMDXProps
+ * @description
+ * Props for the CustomMDX component, extending MDXRemoteProps.
+ * @property {typeof components} [components] - Optional custom components to merge with the default MDX components.
+ */
 type CustomMDXProps = MDXRemoteProps & {
     components?: typeof components;
 };
 
+/**
+ * @name CustomMDX
+ * @description
+ * A wrapper around `next-mdx-remote/rsc` that provides a set of custom components
+ * for rendering MDX content. This includes custom handling for headings, links, images, and more.
+ * @param {CustomMDXProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered MDX content.
+ */
 export function CustomMDX(props: CustomMDXProps) {
     
     return (

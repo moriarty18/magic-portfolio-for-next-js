@@ -1,11 +1,30 @@
 import React from 'react';
 import { Button, Flex, Heading, Text, Icon } from '@/once-ui/components';
 
+/**
+ * @name PricingFeature
+ * @description
+ * Represents a single feature in a pricing plan.
+ * @property {string} text - The description of the feature.
+ * @property {boolean} included - Whether the feature is included in the plan.
+ */
 interface PricingFeature {
   text: string;
   included: boolean;
 }
 
+/**
+ * @name PricingCardProps
+ * @description
+ * Props for the PricingCard component.
+ * @property {string} title - The title of the pricing plan.
+ * @property {string} price - The price of the plan.
+ * @property {string} description - A short description of the plan.
+ * @property {PricingFeature[]} features - An array of features for the plan.
+ * @property {boolean} [isPopular=false] - Whether the plan is marked as popular.
+ * @property {string} [ctaText="Выбрать тариф"] - The text for the call-to-action button.
+ * @property {string} [ctaLink="https://wa.me/7075557293"] - The link for the call-to-action button.
+ */
 interface PricingCardProps {
   title: string;
   price: string;
@@ -16,6 +35,13 @@ interface PricingCardProps {
   ctaLink?: string;
 }
 
+/**
+ * @name PricingCard
+ * @description
+ * A component that displays a single pricing plan with its features and a call-to-action button.
+ * @param {PricingCardProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered component.
+ */
 export const PricingCard: React.FC<PricingCardProps> = ({
   title,
   price,

@@ -5,6 +5,32 @@ import { SpacingToken } from '../types';
 import styles from './RevealFx.module.scss';
 import { Flex } from '.';
 
+/**
+ * @interface RevealFxProps
+ * @description Defines the props for the RevealFx component.
+ * @extends React.ComponentProps<typeof Flex>
+ * @property {React.ReactNode} children - The content to be revealed.
+ * @property {'slow' | 'medium' | 'fast'} [speed='medium'] - The speed of the reveal animation.
+ * @property {number} [delay=0] - The delay in seconds before the animation starts.
+ * @property {boolean} [revealedByDefault=false] - If true, the component is visible by default without animation.
+ * @property {number | SpacingToken} [translateY] - The vertical distance the component will travel during the reveal.
+ * @property {boolean} [trigger] - An external boolean to manually trigger the reveal animation.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component's container.
+ * @property {string} [className] - Optional CSS class name for the component's container.
+ */
+/**
+ * @interface RevealFxProps
+ * @description Defines the props for the RevealFx component.
+ * @extends React.ComponentProps<typeof Flex>
+ * @property {React.ReactNode} children - The content to be revealed.
+ * @property {'slow' | 'medium' | 'fast'} [speed='medium'] - The speed of the reveal animation.
+ * @property {number} [delay=0] - The delay in seconds before the animation starts.
+ * @property {boolean} [revealedByDefault=false] - If true, the component is visible by default without animation.
+ * @property {number | SpacingToken} [translateY] - The vertical distance the component will travel during the reveal.
+ * @property {boolean} [trigger] - An external boolean to manually trigger the reveal animation.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component's container.
+ * @property {string} [className] - Optional CSS class name for the component's container.
+ */
 interface RevealFxProps extends React.ComponentProps<typeof Flex> {
 	children: React.ReactNode;
 	speed?: 'slow' | 'medium' | 'fast';
@@ -16,6 +42,20 @@ interface RevealFxProps extends React.ComponentProps<typeof Flex> {
 	className?: string;
 }
 
+/**
+ * @name RevealFx
+ * @description
+ * A component that applies a "reveal" animation to its children, making them
+ * slide into view from a translated position. The animation can be delayed
+ * or controlled externally with a trigger.
+ * @param {RevealFxProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered component with the reveal effect.
+ * @example
+ * <RevealFx delay={0.5} translateY={20}>
+ *   <p>This will slide in from below.</p>
+ * </RevealFx>
+ */
 const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(({
 	children,
 	speed = 'medium',
