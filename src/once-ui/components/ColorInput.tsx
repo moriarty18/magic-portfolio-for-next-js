@@ -3,11 +3,28 @@
 import React, {  useRef, forwardRef } from 'react';
 import { Flex, Input, InputProps, IconButton, Icon } from '.';
 
+/**
+ * @interface ColorInputProps
+ * @description Defines the props for the ColorInput component.
+ * @extends Omit<InputProps, 'onChange' | 'value'>
+ * @property {string} value - The current color value in hex format (e.g., '#ffffff').
+ * @property {(e: React.ChangeEvent<HTMLInputElement>) => void} onChange - Callback function invoked when the color value changes.
+ */
 interface ColorInputProps extends Omit<InputProps, 'onChange' | 'value'> {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+/**
+ * @name ColorInput
+ * @description
+ * A specialized input component for selecting colors. It wraps a standard `type="color"`
+ * input but provides an enhanced user interface, including a color preview, a reset button,
+ * and an improved visual design.
+ * @param {ColorInputProps} props - The props for the component.
+ * @param {React.Ref<HTMLInputElement>} ref - A ref for the underlying color input element.
+ * @returns {React.ReactElement} The rendered ColorInput component.
+ */
 const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(({
     label,
     id,

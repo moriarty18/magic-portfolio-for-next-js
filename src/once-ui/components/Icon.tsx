@@ -14,6 +14,17 @@ const sizeMap: Record<string, string> = {
     xl: 'var(--static-space-40)',
 };
 
+/**
+ * @interface IconProps
+ * @description Defines the props for the Icon component.
+ * @property {string} name - The name of the icon to render, which must exist as a key in the `iconLibrary`.
+ * @property {`${ColorScheme}-${ColorWeight}`} [onBackground] - The color of the icon when placed on a standard background.
+ * @property {`${ColorScheme}-${ColorWeight}`} [onSolid] - The color of the icon when placed on a solid background.
+ * @property {'xs' | 's' | 'm' | 'l' | 'xl'} [size='m'] - The size of the icon.
+ * @property {boolean} [decorative=true] - If true, the icon is treated as decorative and hidden from screen readers. If false, it's treated as semantic and its name is used as the `aria-label`.
+ * @property {string} [className] - Optional CSS class name for the icon's container.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the icon's container.
+ */
 type IconProps = {
     name: string;
     onBackground?: `${ColorScheme}-${ColorWeight}`;
@@ -24,6 +35,17 @@ type IconProps = {
     style?: React.CSSProperties;
 };
 
+/**
+ * @name Icon
+ * @description
+ * A component that renders an SVG icon from a centralized library. It allows for easy
+ * customization of size and color, and provides accessibility options.
+ * @param {IconProps} props - The props for the component.
+ * @param {React.Ref<HTMLSpanElement>} ref - A ref for the component's root span element.
+ * @returns {React.ReactElement | null} The rendered Icon component, or null if the icon name is not found.
+ * @example
+ * <Icon name="home" size="l" onBackground="brand-strong" />
+ */
 const Icon = forwardRef<HTMLDivElement, IconProps>(({
     name,
     onBackground,

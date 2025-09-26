@@ -8,6 +8,19 @@ import { SpacingToken, ColorScheme, ColorWeight } from '../types';
 
 import styles from './Grid.module.scss';
 
+/**
+ * @interface ComponentProps
+ * @description A composite interface that combines multiple prop types from `interfaces.ts`
+ * to create a versatile set of props for the Grid component. It includes props for
+ * grid layout, spacing, sizing, styling, display, and conditional rendering.
+ * @extends GridProps
+ * @extends SpacingProps
+ * @extends SizeProps
+ * @extends StyleProps
+ * @extends CommonProps
+ * @extends DisplayProps
+ * @extends ConditionalProps
+ */
 interface ComponentProps extends 
     GridProps, 
     SpacingProps, 
@@ -17,6 +30,22 @@ interface ComponentProps extends
     DisplayProps, 
     ConditionalProps {}
 
+/**
+ * @name Grid
+ * @description
+ * A fundamental layout component based on CSS Grid. It allows for creating complex,
+ * responsive grid structures and combines a wide range of props to control layout,
+ * spacing, sizing, colors, and more.
+ * @param {ComponentProps} props - The props for the component, combining layout, spacing, style, and other utilities.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered Grid component.
+ * @example
+ * <Grid columns="repeat(3, 1fr)" gap="16" padding="m">
+ *   <div>Item 1</div>
+ *   <div>Item 2</div>
+ *   <div>Item 3</div>
+ * </Grid>
+ */
 const Grid = forwardRef<HTMLDivElement, ComponentProps>(({
     as: Component = 'div',
     columns,

@@ -15,6 +15,19 @@ const sizeMap: Record<string, SpacingToken> = {
     xl: '48',
 };
 
+/**
+ * @interface LogoProps
+ * @description Defines the props for the Logo component.
+ * @extends React.AnchorHTMLAttributes<HTMLAnchorElement>
+ * @property {string} [className] - Optional CSS class name for the logo container.
+ * @property {'xs' | 's' | 'm' | 'l' | 'xl'} [size='m'] - The size of the logo.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the logo container.
+ * @property {boolean} [wordmark=true] - If true, the wordmark part of the logo is displayed.
+ * @property {boolean} [icon=true] - If true, the icon part of the logo is displayed.
+ * @property {string} [iconSrc] - The URL for a custom icon image, which overrides the default CSS-based icon.
+ * @property {string} [wordmarkSrc] - The URL for a custom wordmark image, which overrides the default CSS-based wordmark.
+ * @property {string} [href] - If provided, the logo will be rendered as a link.
+ */
 interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     className?: string;
     size?: 'xs' | 's' | 'm' | 'l' | 'xl';
@@ -26,6 +39,18 @@ interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     href?: string;
 }
 
+/**
+ * @name Logo
+ * @description
+ * A component for displaying a logo. It can consist of a default CSS-styled icon
+ * and wordmark, or use custom images provided via `iconSrc` and `wordmarkSrc`.
+ * It can be rendered as a static element or a link.
+ * @param {LogoProps} props - The props for the component.
+ * @returns {React.ReactElement} The rendered Logo component.
+ * @example
+ * <Logo href="/" size="l" />
+ * <Logo iconSrc="/custom-icon.svg" wordmark={false} />
+ */
 const Logo: React.FC<LogoProps> = ({
     size = 'm',
     wordmark = true,

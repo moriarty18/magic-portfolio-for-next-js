@@ -5,6 +5,14 @@ import styles from '@/components/about/about.module.scss'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
+/**
+ * @name generateMetadata
+ * @description
+ * Dynamically generates metadata for the "About" page. This includes the page title,
+ * description, and Open Graph/Twitter card information, tailored for the current locale.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {Promise<object>} A promise that resolves to the metadata object for the page.
+ */
 export async function generateMetadata(
     {params: {locale}}: { params: { locale: string }}
 ) {
@@ -38,6 +46,15 @@ export async function generateMetadata(
 	};
 }
 
+/**
+ * @name About
+ * @description
+ * The main component for the "About" page. It renders detailed information about the person,
+ * including their introduction, work experience, studies, and technical skills. It also includes
+ * structured data (JSON-LD) for SEO and a table of contents for easy navigation.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {React.ReactElement} The rendered "About" page component.
+ */
 export default function About(
     { params: {locale}}: { params: { locale: string }}
 ) {

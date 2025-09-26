@@ -3,6 +3,15 @@
 import { useState, useEffect } from 'react';
 import { Flex, ToggleButton, Scroller } from '.';
 
+/**
+ * @interface ButtonOption
+ * @description Defines the structure for a single button option within the SegmentedControl.
+ * @property {React.ReactNode} [label] - The text or content to display for the button.
+ * @property {string} value - A unique value identifying the button.
+ * @property {string} [prefixIcon] - An optional icon to display before the label.
+ * @property {string} [suffixIcon] - An optional icon to display after the label.
+ * @property {string} [className] - Optional CSS class name for the button.
+ */
 interface ButtonOption {
     label?: React.ReactNode;
     value: string;
@@ -11,6 +20,16 @@ interface ButtonOption {
     className?: string;
 }
 
+/**
+ * @interface SegmentedControlProps
+ * @description Defines the props for the SegmentedControl component.
+ * @property {ButtonOption[]} buttons - An array of button option objects to render.
+ * @property {(selected: string) => void} onToggle - A callback function invoked with the `value` of the selected button.
+ * @property {string} [defaultSelected] - The `value` of the button that should be selected by default (uncontrolled).
+ * @property {string} [selected] - The `value` of the currently selected button (controlled).
+ * @property {string} [className] - Optional CSS class name for the component's container.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component's container.
+ */
 interface SegmentedControlProps {
     buttons: ButtonOption[];
     onToggle: (selected: string) => void;
@@ -20,6 +39,22 @@ interface SegmentedControlProps {
     style?: React.CSSProperties;
 }
 
+/**
+ * @name SegmentedControl
+ * @description
+ * A component that displays a set of buttons in a row, allowing a user to
+ * select one option from the set. It can be used as a controlled or uncontrolled
+ * component and is wrapped in a `Scroller` to handle overflow.
+ * @param {SegmentedControlProps} props - The props for the component.
+ * @returns {React.ReactElement} The rendered SegmentedControl component.
+ * @example
+ * const options = [
+ *   { label: 'Option 1', value: 'one' },
+ *   { label: 'Option 2', value: 'two' },
+ * ];
+ *
+ * <SegmentedControl buttons={options} onToggle={(value) => console.log(value)} />
+ */
 const SegmentedControl: React.FC<SegmentedControlProps> = ({
     buttons,
     onToggle,

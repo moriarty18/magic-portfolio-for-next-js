@@ -47,6 +47,14 @@ const pricingPlans = [
   }
 ];
 
+/**
+ * @name Pricing
+ * @description
+ * The main component for the pricing page. It displays a selection of pricing plans
+ * using the `PricingCard` component. The plans are defined in a local array.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {React.ReactElement} The rendered pricing page component.
+ */
 export default function Pricing({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
   

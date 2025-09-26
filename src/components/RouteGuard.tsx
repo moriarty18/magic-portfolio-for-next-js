@@ -5,10 +5,25 @@ import { usePathname } from '@/i18n/routing';
 import { routes, protectedRoutes } from '@/app/resources';
 import { Flex, Spinner, Input, Button, Heading } from '@/once-ui/components';
 
+/**
+ * @name RouteGuardProps
+ * @description
+ * Props for the RouteGuard component.
+ * @property {React.ReactNode} children - The content to render if the route is accessible.
+ */
 interface RouteGuardProps {
     children: React.ReactNode;
 }
 
+/**
+ * @name RouteGuard
+ * @description
+ * A component that protects routes based on configuration and password authentication.
+ * It checks if a route is enabled and if it requires a password. If a password is required and the user is not authenticated,
+ * it renders a password prompt. While checking, it displays a loading spinner.
+ * @param {RouteGuardProps} props - The props for the component.
+ * @returns {React.ReactElement | null} - The children if the route is accessible, or a loading/password prompt.
+ */
 const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     const pathname = usePathname();
     const [isRouteEnabled, setIsRouteEnabled] = useState(false);

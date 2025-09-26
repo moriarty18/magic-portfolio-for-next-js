@@ -5,6 +5,21 @@ import classNames from 'classnames';
 import { Flex, Text } from '.';
 import styles from './Input.module.scss';
 
+/**
+ * @interface InputProps
+ * @description Defines the props for the Input component.
+ * @extends React.InputHTMLAttributes<HTMLInputElement>
+ * @property {string} id - A unique identifier for the input, used to link the label and description.
+ * @property {string} label - The label for the input, which can act as a floating label or a placeholder.
+ * @property {'s' | 'm'} [height='m'] - The height of the input field.
+ * @property {React.ReactNode} [error] - An error message to display below the input, which also applies an error style.
+ * @property {React.ReactNode} [description] - A description or helper text to display below the input.
+ * @property {string} [radius] - Custom CSS `border-radius` value for the input container.
+ * @property {string} [className] - Optional CSS class name for the component's wrapper.
+ * @property {React.ReactNode} [hasPrefix] - An element to render as a prefix inside the input container.
+ * @property {React.ReactNode} [hasSuffix] - An element to render as a suffix inside the input container.
+ * @property {boolean} [labelAsPlaceholder=false] - If true, the `label` is used as a placeholder instead of a floating label.
+ */
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     id: string;
     label: string;
@@ -18,6 +33,23 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     labelAsPlaceholder?: boolean;
 }
 
+/**
+ * @name Input
+ * @description
+ * A styled and accessible text input component that supports floating labels,
+ * placeholders, prefix/suffix elements, error states, and helper text.
+ * @param {InputProps} props - The props for the component.
+ * @param {React.Ref<HTMLInputElement>} ref - A ref for the underlying input element.
+ * @returns {React.ReactElement} The rendered Input component.
+ * @example
+ * <Input
+ *   id="username"
+ *   label="Username"
+ *   description="Enter your unique username."
+ *   error={isError ? "Username is already taken." : undefined}
+ *   hasPrefix={<Icon name="person" />}
+ * />
+ */
 const Input = forwardRef<HTMLInputElement, InputProps>(({
     id,
     label,

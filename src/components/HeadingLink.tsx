@@ -5,6 +5,15 @@ import { Heading, Flex, IconButton, Toaster } from '@/once-ui/components';
 
 import styles from '@/components/HeadingLink.module.scss';
 
+/**
+ * @name HeadingLinkProps
+ * @description
+ * Props for the HeadingLink component.
+ * @property {string} id - The ID of the heading, used for the anchor link.
+ * @property {1 | 2 | 3 | 4 | 5 | 6} level - The heading level (1-6).
+ * @property {React.ReactNode} children - The content of the heading.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the component.
+ */
 interface HeadingLinkProps {
     id: string;
     level: 1 | 2 | 3 | 4 | 5 | 6;
@@ -12,6 +21,14 @@ interface HeadingLinkProps {
     style?: React.CSSProperties;
 }
 
+/**
+ * @name HeadingLink
+ * @description
+ * A component that renders a heading with a clickable link to copy the URL with the heading's ID as a hash.
+ * It shows a toast notification on success or failure of copying the link.
+ * @param {HeadingLinkProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered component.
+ */
 export const HeadingLink: React.FC<HeadingLinkProps> = ({
     id,
     level,

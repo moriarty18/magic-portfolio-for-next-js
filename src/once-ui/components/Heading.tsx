@@ -6,8 +6,27 @@ import classNames from 'classnames';
 import { TextProps, CommonProps, SpacingProps } from '../interfaces'
 import { ColorScheme, ColorWeight, TextVariant, SpacingToken } from '../types';
 
+/**
+ * @typedef {TextProps<T> & CommonProps & SpacingProps & ComponentPropsWithoutRef<T>} HeadingProps<T>
+ * @template T - The HTML element type to render, defaults to 'h1'.
+ * @description A composite type that combines text, common, and spacing props to create a comprehensive set of props for the Heading component.
+ */
 type HeadingProps<T extends ElementType> = TextProps<T> & CommonProps & SpacingProps & ComponentPropsWithoutRef<T>;
 
+/**
+ * @name Heading
+ * @description
+ * A polymorphic component for rendering semantic headings (h1, h2, etc.). It offers
+ * extensive customization through props for text styling, color, spacing, and alignment.
+ * The heading level is determined by the `as` prop.
+ * @template T - The HTML element type to render, defaults to 'h1'.
+ * @param {HeadingProps<T>} props - The props for the component.
+ * @returns {React.ReactElement} The rendered Heading component.
+ * @example
+ * <Heading as="h2" variant="heading-strong-l" onBackground="brand-strong" marginBottom="m">
+ *   This is a Subtitle
+ * </Heading>
+ */
 const Heading = <T extends ElementType = 'h1'>({
     as,
     variant,

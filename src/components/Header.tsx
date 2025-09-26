@@ -14,11 +14,25 @@ import { renderContent } from "@/app/resources";
 import { useTranslations } from "next-intl";
 import { i18n } from "@/app/resources/config";
 
+/**
+ * @name TimeDisplayProps
+ * @description
+ * Props for the TimeDisplay component.
+ * @property {string} timeZone - The time zone to display the time in.
+ * @property {string} [locale='en-GB'] - The locale to use for formatting the time string.
+ */
 type TimeDisplayProps = {
     timeZone: string;
     locale?: string;  // Optionally allow locale, defaulting to 'en-GB'
 };
 
+/**
+ * @name TimeDisplay
+ * @description
+ * A component that displays the current time in a given time zone.
+ * @param {TimeDisplayProps} props - The props for the component.
+ * @returns {React.ReactElement} - The rendered component.
+ */
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'en-GB' }) => {
     const [currentTime, setCurrentTime] = useState('');
 
@@ -49,8 +63,14 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'en-GB' })
     );
 };
 
-export default TimeDisplay;
 
+/**
+ * @name Header
+ * @description
+ * The main header component for the application.
+ * It displays the navigation links, language switcher, and the current time.
+ * @returns {React.ReactElement} - The rendered component.
+ */
 export const Header = () => {
     const router = useRouter();
     const [isPending, startTransition] = useTransition();

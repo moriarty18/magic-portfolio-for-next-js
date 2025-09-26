@@ -22,6 +22,17 @@ export interface MaskOptions {
 
 type MaskType = keyof MaskOptions;
 
+/**
+ * @interface BackgroundProps
+ * @description Defines the props for the Background component.
+ * @property {CSSProperties['position']} [position='fixed'] - The CSS position of the background layers.
+ * @property {GradientProps} [gradient] - Configuration for the gradient effect.
+ * @property {DotsProps} [dots] - Configuration for the dots effect.
+ * @property {LinesProps} [lines] - Configuration for the lines effect.
+ * @property {MaskType} [mask='none'] - The type of mask to apply to the background effects.
+ * @property {string} [className] - Optional CSS class name for the background layers.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the background layers.
+ */
 export interface BackgroundProps {
     position?: CSSProperties['position'];
     gradient?: GradientProps;
@@ -32,11 +43,25 @@ export interface BackgroundProps {
     style?: React.CSSProperties;
 }
 
+/**
+ * @interface GradientProps
+ * @description Defines the props for the gradient background effect.
+ * @property {boolean} [display] - Whether to display the gradient effect.
+ * @property {number} [opacity] - The opacity of the gradient effect.
+ */
 export interface GradientProps {
     display?: boolean;
     opacity?: number;
 }
 
+/**
+ * @interface DotsProps
+ * @description Defines the props for the dots background effect.
+ * @property {boolean} [display] - Whether to display the dots effect.
+ * @property {number} [opacity] - The opacity of the dots effect.
+ * @property {string} [color] - The color of the dots.
+ * @property {SpacingToken} [size] - The size and spacing of the dots from the spacing tokens.
+ */
 export interface DotsProps {
     display?: boolean;
     opacity?: number;
@@ -44,12 +69,29 @@ export interface DotsProps {
     size?: SpacingToken;
 }
 
+/**
+ * @interface LinesProps
+ * @description Defines the props for the lines background effect.
+ * @property {boolean} [display] - Whether to display the lines effect.
+ * @property {number} [opacity] - The opacity of the lines effect.
+ * @property {SpacingToken} [size] - The size and spacing of the lines.
+ */
 export interface LinesProps {
     display?: boolean;
     opacity?: number;
     size?: SpacingToken;
 }
 
+/**
+ * @name Background
+ * @description
+ * A component that renders a layered, decorative background with optional effects
+ * like gradients, dots, and lines. It also supports various masking options,
+ * including a dynamic mask that follows the user's cursor.
+ * @param {BackgroundProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered Background component.
+ */
 const Background = forwardRef<HTMLDivElement, BackgroundProps>(
     ({
         position = 'fixed',

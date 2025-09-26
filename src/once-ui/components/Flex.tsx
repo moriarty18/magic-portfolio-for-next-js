@@ -6,6 +6,19 @@ import classNames from 'classnames';
 import { FlexProps, SpacingProps, SizeProps, StyleProps, CommonProps, DisplayProps, ConditionalProps } from '../interfaces';
 import { TextVariant, SpacingToken, ColorScheme, ColorWeight } from '../types';
 
+/**
+ * @interface ComponentProps
+ * @description A composite interface that combines multiple prop types from `interfaces.ts`
+ * to create a versatile set of props for the Flex component. It includes props for
+ * flexbox layout, spacing, sizing, styling, display, and conditional rendering.
+ * @extends FlexProps
+ * @extends SpacingProps
+ * @extends SizeProps
+ * @extends StyleProps
+ * @extends CommonProps
+ * @extends DisplayProps
+ * @extends ConditionalProps
+ */
 interface ComponentProps extends 
     FlexProps, 
     SpacingProps, 
@@ -15,6 +28,22 @@ interface ComponentProps extends
     DisplayProps, 
     ConditionalProps {}
 
+/**
+ * @name Flex
+ * @description
+ * A fundamental and highly versatile layout component based on CSS flexbox. It combines
+ * a wide range of props to control layout, spacing, sizing, colors, and more, all
+ * through a simple and consistent API. It can be rendered as different HTML elements
+ * using the `as` prop.
+ * @param {ComponentProps} props - The props for the component, combining layout, spacing, style, and other utilities.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered Flex component.
+ * @example
+ * <Flex direction="column" gap="16" padding="m" background="surface" radius="l">
+ *   <Text>Hello</Text>
+ *   <Text>World</Text>
+ * </Flex>
+ */
 const Flex = forwardRef<HTMLDivElement, ComponentProps>(({
     as: Component = 'div',
     direction,

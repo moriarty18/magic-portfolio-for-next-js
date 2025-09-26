@@ -9,6 +9,14 @@ import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
+/**
+ * @name generateMetadata
+ * @description
+ * Dynamically generates metadata for the home page. This includes the page title,
+ * description, and Open Graph/Twitter card information, tailored for the current locale.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {Promise<object>} A promise that resolves to the metadata object for the page.
+ */
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
@@ -42,6 +50,15 @@ export async function generateMetadata(
 	};
 }
 
+/**
+ * @name Home
+ * @description
+ * The main component for the home page. It serves as the landing page of the portfolio,
+ * showcasing a headline, subline, featured projects, latest blog posts, and a newsletter signup form.
+ * It also includes structured data (JSON-LD) for SEO.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {React.ReactElement} The rendered home page component.
+ */
 export default function Home(
 	{ params: {locale}}: { params: { locale: string }}
 ) {

@@ -5,6 +5,15 @@ import classNames from 'classnames';
 import { Flex, Icon, InteractiveDetails, InteractiveDetailsProps } from '.';
 import styles from './SharedInteractiveStyles.module.scss';
 
+/**
+ * @interface CheckboxProps
+ * @description Defines the props for the Checkbox component.
+ * @extends Omit<InteractiveDetailsProps, 'onClick'>
+ * @extends React.InputHTMLAttributes<HTMLInputElement>
+ * @property {boolean} [isChecked] - The checked state of the checkbox. Used for controlled components.
+ * @property {boolean} [isIndeterminate=false] - If true, the checkbox will be in an indeterminate state.
+ * @property {() => void} [onToggle] - Callback function invoked when the checkbox is toggled.
+ */
 interface CheckboxProps extends Omit<InteractiveDetailsProps, 'onClick'>, React.InputHTMLAttributes<HTMLInputElement> {
     isChecked?: boolean;
     isIndeterminate?: boolean;
@@ -13,6 +22,15 @@ interface CheckboxProps extends Omit<InteractiveDetailsProps, 'onClick'>, React.
 
 const generateId = () => `checkbox-${Math.random().toString(36).substring(2, 9)}`;
 
+/**
+ * @name Checkbox
+ * @description
+ * A styled and accessible checkbox component. It can be used as a controlled or
+ * uncontrolled component and supports an indeterminate state.
+ * @param {CheckboxProps} props - The props for the component.
+ * @param {React.Ref<HTMLInputElement>} ref - A ref for the underlying input element.
+ * @returns {React.ReactElement} The rendered Checkbox component.
+ */
 const Checkbox: React.FC<CheckboxProps> = forwardRef<HTMLInputElement, CheckboxProps>(({
     style,
     className,

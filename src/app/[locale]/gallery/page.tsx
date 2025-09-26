@@ -4,6 +4,14 @@ import { baseURL, renderContent } from "@/app/resources";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
+/**
+ * @name generateMetadata
+ * @description
+ * Dynamically generates metadata for the gallery page. This includes the page title,
+ * description, and Open Graph/Twitter card information, tailored for the current locale.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {Promise<object>} A promise that resolves to the metadata object for the page.
+ */
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
 ) {
@@ -39,6 +47,14 @@ export async function generateMetadata(
 	};
 }
 
+/**
+ * @name Gallery
+ * @description
+ * The main component for the gallery page. It displays a masonry grid of images
+ * and includes structured data (JSON-LD) for an image gallery to improve SEO.
+ * @param {{ params: { locale: string } }} props - The props containing the current locale.
+ * @returns {React.ReactElement} The rendered gallery page component.
+ */
 export default function Gallery(
 	{ params: {locale}}: { params: { locale: string }}
 ) {

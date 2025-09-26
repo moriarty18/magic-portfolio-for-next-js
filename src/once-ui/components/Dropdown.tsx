@@ -5,6 +5,17 @@ import classNames from 'classnames';
 import { Flex, Text } from '.';
 import styles from './Dropdown.module.scss';
 
+/**
+ * @interface DropdownOptions
+ * @description Defines the structure for a single option within the Dropdown component.
+ * @property {React.ReactNode} label - The main content to display for the option.
+ * @property {string} value - A unique value identifying the option.
+ * @property {React.ReactNode} [hasPrefix] - An optional element to display before the label.
+ * @property {React.ReactNode} [hasSuffix] - An optional element to display after the label.
+ * @property {React.ReactNode} [description] - An optional description to display below the label.
+ * @property {boolean} [dividerAfter] - If true, a divider is rendered after this option.
+ * @property {boolean} [danger] - If true, applies a danger style to the option (e.g., for destructive actions).
+ */
 interface DropdownOptions {
     label: React.ReactNode;
     value: string;
@@ -15,6 +26,17 @@ interface DropdownOptions {
     danger?: boolean;
 }
 
+/**
+ * @interface DropdownProps
+ * @description Defines the props for the Dropdown component.
+ * @extends Omit<HTMLAttributes<HTMLDivElement>, 'onSelect'>
+ * @property {DropdownOptions[]} options - An array of option objects to be rendered in the dropdown.
+ * @property {string} [selectedOption] - The `value` of the currently selected option.
+ * @property {(option: DropdownOptions) => void} onOptionSelect - Callback function invoked when an option is selected.
+ * @property {string} [className] - Optional CSS class name for the dropdown container.
+ * @property {ReactNode} [children] - Optional children to render at the top of the dropdown list.
+ * @property {() => void} [onEscape] - Optional callback function invoked when the Escape key is pressed.
+ */
 interface DropdownProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onSelect'> {
     options: DropdownOptions[];
     selectedOption?: string;
@@ -24,6 +46,17 @@ interface DropdownProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onSelect'>
     onEscape?: () => void;
 }
 
+/**
+ * @name Dropdown
+ * @description
+ * A fully accessible dropdown menu component that supports keyboard navigation
+ * (arrow keys, Enter, Escape) and type-ahead to find options. It is a low-level
+ * component, typically used within a wrapper like `DropdownWrapper` to manage
+ * visibility and positioning.
+ * @param {DropdownProps} props - The props for the component.
+ * @param {React.Ref<HTMLDivElement>} ref - A ref for the component's root element.
+ * @returns {React.ReactElement} The rendered Dropdown component.
+ */
 const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(({
     options,
     selectedOption,

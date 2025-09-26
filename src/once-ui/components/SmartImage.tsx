@@ -6,6 +6,22 @@ import classNames from 'classnames';
 
 import { Flex, Skeleton } from '@/once-ui/components';
 
+/**
+ * @interface SmartImageProps
+ * @description Defines the props for the SmartImage component, extending the default Next.js ImageProps.
+ * @extends ImageProps
+ * @property {string} [className] - Optional CSS class name for the image container.
+ * @property {React.CSSProperties} [style] - Optional inline styles for the image container.
+ * @property {string} [aspectRatio] - The aspect ratio of the image (e.g., '16 / 9').
+ * @property {number} [height] - The height of the image in rem units if `aspectRatio` is not set.
+ * @property {string} [radius] - The border radius token for the image.
+ * @property {string} [alt=''] - The alternative text for the image.
+ * @property {boolean} [isLoading=false] - If true, displays a skeleton loader.
+ * @property {CSSProperties['objectFit']} [objectFit='cover'] - The CSS `object-fit` property for the image.
+ * @property {boolean} [enlarge=false] - If true, allows the image to be enlarged into a modal view on click.
+ * @property {string} src - The source URL for the media (image, video, or YouTube link).
+ * @property {boolean} [unoptimized=false] - If true, the image will not be optimized by Next.js.
+ */
 export type SmartImageProps = ImageProps & {
     className?: string;
     style?: React.CSSProperties;
@@ -20,6 +36,15 @@ export type SmartImageProps = ImageProps & {
     unoptimized?: boolean;
 };
 
+/**
+ * @name SmartImage
+ * @description
+ * A versatile media component that can render images, videos, or YouTube embeds.
+ * It includes features like loading skeletons, aspect ratio control, and an interactive
+ * "enlarge" mode that displays the media in a modal overlay.
+ * @param {SmartImageProps} props - The props for the component.
+ * @returns {React.ReactElement} The rendered SmartImage component.
+ */
 const SmartImage: React.FC<SmartImageProps> = ({
     className,
     style,
