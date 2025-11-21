@@ -1,19 +1,19 @@
 const baseURL = 'demo.magic-portfolio.com'
 
 // Enable localization
-const i18n = false;
+const i18n = true;
 
 // Manage localized content in the messages folder
 const i18nOptions = {
-    locales: ['en','id'],            // A list of all locales that are supported, e.g. ['en','id']
-    defaultLocale: 'en'         // Locale used by default and as a fallback
+    locales: ['ru', 'en'],            // A list of all locales that are supported, e.g. ['en','id']
+    defaultLocale: 'ru'         // Locale used by default and as a fallback
 }
 
 const routes = {
     '/':        true,
     '/about':   true,
     '/work':    true,
-    '/pricing': true,
+    '/pricing': false,
     '/blog':    false,
     '/gallery': false,
 }
@@ -46,7 +46,7 @@ const style = {
     brand:       'emerald',      // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
     accent:      'indigo',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
     solid:       'contrast',     // color | contrast
-    solidStyle:  'flat',         // flat | plastic
+    solidStyle:  'plastic',         // flat | plastic
     border:      'playful',      // rounded | playful | conservative
     surface:     'translucent',  // filled | translucent
     transition:  'all'           // all | micro | macro

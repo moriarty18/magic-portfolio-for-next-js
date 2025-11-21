@@ -4,7 +4,7 @@ import { Heading, Flex, Text, Button,  Avatar, RevealFx, Arrow } from '@/once-ui
 import { Projects } from '@/components/work/Projects';
 
 import { baseURL, routes, renderContent } from '@/app/resources'; 
-import { Mailchimp } from '@/components';
+import { Mailchimp, Stats, Clients, Testimonials } from '@/components';
 import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
@@ -122,11 +122,20 @@ export default function Home(
 							</Flex>
 						</RevealFx>
 					</Flex>
-				
 			</Flex>
+
+            <RevealFx translateY="16" delay={0.6}>
+                <Stats />
+            </RevealFx>
+
 			<RevealFx translateY="16" delay={0.6}>
 				<Projects range={[1,1]} locale={locale}/>
 			</RevealFx>
+
+            <RevealFx translateY="16" delay={0.8}>
+                <Clients />
+            </RevealFx>
+
 			{routes['/blog'] && (
 				<Flex
 					fillWidth gap="24"
@@ -146,6 +155,11 @@ export default function Home(
 				</Flex>
 			)}
 			<Projects range={[2]} locale={locale}/>
+
+            <RevealFx translateY="16" delay={1.0}>
+                <Testimonials />
+            </RevealFx>
+
 			{ newsletter.display &&
 				<Mailchimp newsletter={newsletter} />
 			}

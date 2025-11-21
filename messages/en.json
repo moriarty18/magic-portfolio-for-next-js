@@ -1,6 +1,6 @@
 {
     "person": {
-        "role": "Design Engineer"
+        "role": "Digital Marketing Manager"
     },
     "newsletter": {
         "title": "Subscribe to {firstName}'s Newsletter",
@@ -8,54 +8,66 @@
         "button": "Sign up"
     },
     "home": {
-        "label": "Главная",
-        "title": "Портфолио {name}",
-        "description": "Портфолио digital-маркетолога {role}",
-        "headline": "Digital-маркетолог",
-        "subline": "Превращаю рекламные бюджеты в прибыль, последние 7 лет помогаю бизнесу масштабироваться через системный digital-маркетинг."
+        "label": "Home",
+        "title": "{name}'s Portfolio",
+        "description": "Portfolio website showcasing my work as a {role}",
+        "headline": "Digital Marketing Manager",
+        "subline": "Hi! I'm Aziz 👋 Digital Marketer, turning ad budgets into <code>profit</code>, helping businesses scale through systemic digital marketing for the last 7 years,<br />specializing in creating sales funnels and marketing automation."
     },
     "about": {
-        "label": "Обо мне",
-        "title": "Обо мне",
-        "description": "Познакомьтесь с {name}, {role} из {location}",
+        "label": "About",
+        "title": "About Me",
+        "description": "Meet {name}, {role} from {location}",
         "intro": {
             "title": "Introduction",
-            "description": "Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology."
+            "description": "Certified Google Ads, Meta Blueprint, and Yandex Direct specialist. Constantly learning new tools and approaches in digital marketing to achieve maximum ad campaign efficiency."
         },
         "work": {
             "title": "Work Experience",
             "experiences": {
-                "FLY": {
-                    "timeframe": "2022 - Present",
-                    "role": "Senior Design Engineer",
-                    "achievements": "Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.;Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster."
+                "Abris Distribution": {
+                    "timeframe": "2024 - Present",
+                    "role": "Digital marketing manager",
+                    "achievements": "Successful launch of a digital project to promote EV charging stations in the UAE from scratch: landing page development, end-to-end analytics setup, marketing automation, and ad campaign launch.;Achievements: stable lead generation at $10 per lead via Meta and Google Ads campaigns upon entering a new market."
                 },
-                "Creativ3": {
-                    "timeframe": "2018 - 2022",
-                    "role": "Lead Designer",
-                    "achievements": "Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.;Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue."
+                "Cheil Kazakhstan": {
+                    "timeframe": "2022 - 2024",
+                    "role": "CRM manager/PPC specialist",
+                    "achievements": "Development and implementation of customer journey for Samsung users with trigger email newsletters, push notifications, and targeted campaigns based on owned channels.;Achievements: annual revenue through owned channels and direct marketing reached $5.9M, successful integration and work with data in the Adobe Experience Cloud ecosystem (Analytics, Audience Manager, Campaign Classic).;Management of advertising campaigns for the leading automotive holding Astana Motors, including premium and mass brands (Hyundai, BMW, Toyota, Lexus, Land Rover, Jaguar, Volvo, and others) in Google Ads, Meta Ads, and Yandex Direct.;Achievements: optimization of advertising campaigns with a total budget of over 40 million tenge per month, setup of end-to-end analytics for 12+ brands, which led to a 35% reduction in the cost of a test drive request while maintaining lead quality."
                 }
             }
         },
         "studies": {
             "title": "Studies",
             "institutions": {
-                "University of Jakarta": {
-                    "description": "Studied software engineering."
+                "Almaty Technological University": {
+                    "description": "Computer Science and Software Engineering"
                 },
-                "Build the Future": {
-                    "description": "Studied online marketing and personal branding."
+                "AI Course": {
+                    "description": "AI Marketing"
                 }
             }
         },
         "technical": {
             "title": "Technical skills",
             "skills": {
-                "Figma": {
-                    "description": "Able to prototype in Figma with Once UI with unnatural speed."
+                "Analytics": {
+                    "description": "Deep experience with GA4, Yandex Metrica, Facebook Pixel. Setup of end-to-end analytics and automated reporting systems."
                 },
-                "Nextjs": {
-                    "description": "Building next gen apps with Next.js + Once UI + Supabase."
+                "Ads Platforms": {
+                    "description": "Professional management of advertising campaigns in Google Ads, Meta Ads, TikTok Ads focused on ROI and conversion."
+                },
+                "Media Planning": {
+                    "description": "Comprehensive analysis and optimization of advertising channels to maximize marketing campaign efficiency and achieve business goals."
+                },
+                "CRM Integration": {
+                    "description": "Professional integration and setup of CRM systems (AmoCRM, Bitrix24) to create a unified information space: business process automation, sales funnel management, end-to-end analytics, and multi-channel communication with clients in one interface."
+                },
+                "Tilda": {
+                    "description": "Creation of attractive, high-conversion landing pages"
+                },
+                "Canva": {
+                    "description": "Tool for creating professional visual creatives - from static images and infographics to animated videos and presentations, ensuring maximum audience engagement through bright and effective visual content."
                 }
             }
         }
@@ -66,9 +78,9 @@
         "description": "Read what {name} has been up to recently"
     },
     "work": {
-        "label": "Проекты",
-        "title": "Мои проекты",
-        "description": "Digital-маркетинг проекты {name}"
+        "label": "Projects",
+        "title": "My Projects",
+        "description": "Major projects {name} has worked on"
     },
     "gallery": {
         "label": "Gallery",
@@ -76,6 +88,6 @@
         "description": "A photo collection by {name}"
     },
     "projectCard": {
-        "label": "Посмотреть кейс"
+        "label": "View Case Study"
     }
 }

@@ -2,19 +2,19 @@ import { InlineCode } from "@/once-ui/components";
 
 const createI18nContent = (t) => {
     const person = {
-        firstName: 'Aziz',
-        lastName:  'Kozhanov',
+        firstName: 'Азиз',
+        lastName:  'Кожанов',
         get name() {
             return `${this.firstName} ${this.lastName}`;
         },
         role:      t("person.role"),
         avatar:    '/images/avatar.jpg',
-        location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-        languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+        location:  'Asia/Almaty',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+        languages: ['Русский', 'English']  // optional: Leave the array empty if you don't want to display languages
     }
 
     const newsletter = {
-        display: true,
+        display: false,
         title: <>{t("newsletter.title", {firstName: person.firstName})}</>,
         description: <>{t("newsletter.description")}</>
     }
@@ -23,24 +23,24 @@ const createI18nContent = (t) => {
         // Links are automatically displayed.
         // Import new icons in /once-ui/icons.ts
         {
-            name: 'GitHub',
-            icon: 'github',
-            link: 'https://github.com/once-ui-system/nextjs-starter',
+            name: 'Instagram',
+            icon: 'instagram',
+            link: 'https://www.instagram.com/hustle.almaty',
         },
         {
             name: 'LinkedIn',
             icon: 'linkedin',
-            link: 'https://www.linkedin.com/company/once-ui/',
+            link: 'https://www.linkedin.com/in/aziz-kozhanov/',
         },
         {
-            name: 'X',
-            icon: 'x',
-            link: '',
+            name: 'WhatsApp',
+            icon: 'whatsapp',
+            link: 'https://wa.me/7075557293',
         },
         {
             name: 'Email',
             icon: 'email',
-            link: 'mailto:example@gmail.com',
+            link: 'mailto:kozhanov93@gmail.com',
         },
     ]
 
@@ -49,7 +49,10 @@ const createI18nContent = (t) => {
         title: t("home.title", {name: person.name}),
         description: t("home.description", {role: person.role}),
         headline: <>{t("home.headline")}</>,
-        subline: <>{t("home.subline")}</>
+        subline: <>{t.rich("home.subline", {
+            code: (chunks) => <InlineCode>{chunks}</InlineCode>,
+            br: () => <br />
+        })}</>
     }
 
     const about = {
@@ -58,7 +61,7 @@ const createI18nContent = (t) => {
         description: t("about.description", {name: person.name, role: person.role, location: person.location}),
         tableOfContent: {
             display: true,
-            subItems: true
+            subItems: false
         },
         avatar: {
             display: true
@@ -77,39 +80,46 @@ const createI18nContent = (t) => {
             title: t("about.work.title"),
             experiences: [
                 {
-                    company: 'FLY',
-                    timeframe: t("about.work.experiences.FLY.timeframe"),
-                    role: t("about.work.experiences.FLY.role"),
-                    achievements: t("about.work.experiences.FLY.achievements").split(";"),
+                    company: 'Abris Distribution',
+                    timeframe: t("about.work.experiences.Abris Distribution.timeframe"),
+                    role: t("about.work.experiences.Abris Distribution.role"),
+                    achievements: t("about.work.experiences.Abris Distribution.achievements").split(";"),
                     images: [ // optional: leave the array empty if you don't want to display images
                         {
-                            src: '/images/projects/project-01/cover-01.jpg',
-                            alt: 'Once UI Project',
+                            src: '/images/projects/project-01/cover-01.png',
+                            alt: 'Greenline project',
                             width: 16,
                             height: 9
                         }
                     ]
                 },
                 {
-                    company: 'Creativ3',
-                    timeframe: t("about.work.experiences.Creativ3.timeframe"),
-                    role: t("about.work.experiences.Creativ3.role"),
-                    achievements: t("about.work.experiences.Creativ3.achievements").split(";"),
-                    images: [ ]
+                    company: 'Cheil Kazakhstan',
+                    timeframe: t("about.work.experiences.Cheil Kazakhstan.timeframe"),
+                    role: t("about.work.experiences.Cheil Kazakhstan.role"),
+                    achievements: t("about.work.experiences.Cheil Kazakhstan.achievements").split(";"),
+                    images: [ // optional: leave the array empty if you don't want to display images
+                        {
+                            src: '/images/projects/project-01/cover-02.jpg',
+                            alt: 'Greenline project',
+                            width: 21,
+                            height: 9
+                        }
+                    ]
                 }
             ]
         },
         studies: {
             display: true, // set to false to hide this section
-            title: 'Studies',
+            title: t("about.studies.title"),
             institutions: [
                 {
-                    name: 'University of Jakarta',
-                    description: <>{t(`about.studies.institutions.University of Jakarta.description`)}</>,
+                    name: 'Алматинский технологический университет',
+                    description: <>{t("about.studies.institutions.Almaty Technological University.description")}</>,
                 },
                 {
-                    name: 'Build the Future',
-                    description: <>{t("about.studies.institutions.Build the Future.description")}</>,
+                    name: 'Курс по нейросетям',
+                    description: <>{t("about.studies.institutions.AI Course.description")}</>,
                 }
             ]
         },
@@ -118,17 +128,36 @@ const createI18nContent = (t) => {
             title: t("about.technical.title"),
             skills: [
                 {
-                    title: 'Figma',
-                    description: <>{t("about.technical.skills.Figma.description")}</>,
+                    title: 'Аналитика',
+                    description: <>{t("about.technical.skills.Analytics.description")}</>,
+                    images: []
+                },
+                {
+                    title: 'Рекламные платформы',
+                    description: <>{t("about.technical.skills.Ads Platforms.description")}</>,
+                    images: []
+                },
+                {
+                    title: 'Медиапланирование',
+                    description: <>{t("about.technical.skills.Media Planning.description")}</>,
+                    // optional: leave the array empty if you don't want to display images
                     images: [
                         {
-                            src: '/images/projects/project-01/cover-02.jpg',
+                            src: '/images/projects/project-01/cover-03.png',
                             alt: 'Project image',
-                            width: 16,
+                            width: 21,
                             height: 9
                         },
+
+                    ]
+                },
+                {
+                    title: 'Интеграция CRM систем AMO/Birix24',
+                    description: <>{t("about.technical.skills.CRM Integration.description")}</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images: [
                         {
-                            src: '/images/projects/project-01/cover-03.jpg',
+                            src: '/images/projects/project-01/cover-04.png',
                             alt: 'Project image',
                             width: 16,
                             height: 9
@@ -136,16 +165,16 @@ const createI18nContent = (t) => {
                     ]
                 },
                 {
-                    title: 'Next.js',
-                    description: <>{t("about.technical.skills.Nextjs.description")}</>, // "." not accepted in next-intl namespace
-                    images: [
-                        {
-                            src: '/images/projects/project-01/cover-04.jpg',
-                            alt: 'Project image',
-                            width: 16,
-                            height: 9
-                        },
-                    ]
+                    title: 'Tilda',
+                    description: <>{t("about.technical.skills.Tilda.description")}</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images:[]
+                },
+                {
+                    title: 'Canva',
+                    description: <>{t("about.technical.skills.Canva.description")}</>,
+                    // optional: leave the array empty if you don't want to display images
+                    images: []
                 }
             ]
         }
